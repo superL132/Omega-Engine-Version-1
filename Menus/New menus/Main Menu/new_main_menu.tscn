@@ -793,7 +793,6 @@ offset_bottom = -279.0
 text = "demo 0.0.1"
 label_settings = SubResource("LabelSettings_jogfm")
 horizontal_alignment = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="update checker" type="Node2D" parent="Camera2D"]
 script = ExtResource("33_3g8fg")

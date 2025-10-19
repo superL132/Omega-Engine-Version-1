@@ -50,7 +50,7 @@ func _ready():
 	var json_versionData = JSON.new()
 	json_versionData = json_versionData.parse_string(FileAccess.get_file_as_string("res://Data/version info.json"))
 	
-	$Camera2D/version.text = str(json_versionData.get("versionType"), " ", (ProjectSettings.get_setting("omega/version")))
+	$Camera2D/version.text = str("[This mod is no longer in development]", json_versionData.get("versionType"), " ", (ProjectSettings.get_setting("omega/version")))
 
 func _process(delta):
 	
