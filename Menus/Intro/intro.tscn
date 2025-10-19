@@ -1,0 +1,515 @@
+[gd_scene load_steps=10 format=3 uid="uid://c24o08o7gyfia"]
+
+[ext_resource type="Script" uid="uid://d1ps26lq4h3vx" path="res://Menus/Intro/intro.gd" id="1_nd847"]
+[ext_resource type="FontFile" uid="uid://b2wxr4opq5ma0" path="res://Resources/Fonts/FridayNightFunkin-Regular.ttf" id="1_uttgh"]
+[ext_resource type="AudioStream" uid="uid://cxjyqjatexvgp" path="res://Resources/Music/Menu/freakyMenu.ogg" id="3_55j0v"]
+[ext_resource type="Texture2D" uid="uid://bjae1teq4o1k3" path="res://icon.svg" id="3_l206l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fwsbl"]
+font = ExtResource("1_uttgh")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_55j0v"]
+font = ExtResource("1_uttgh")
+font_size = 50
+
+[sub_resource type="Animation" id="Animation_55j0v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("freakyMenu:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("words/credits/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("words/credits/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("words/credits/Label3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("words/godot/Label4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("words/godot/Label5:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("words/godot/TextureRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("words/Random phrases/Label:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("words/Random phrases/Label3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("words/credits2/Label:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("words/credits2/Label2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("words/credits2/Label3:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Camera2D:zoom")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nd847"]
+resource_name = "menu intro"
+length = 9.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("freakyMenu:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("words/credits/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("words/credits/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("words/credits/Label3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.23333, 2.26667, 2.3, 2.33333, 2.36667, 2.4, 2.43333, 2.46667, 2.5, 2.53333, 2.56667, 2.6, 2.63333, 2.66667, 2.7, 2.73333, 2.76667, 2.8, 2.83333, 2.86667, 2.9, 2.93333, 2.96667, 3, 3.03333, 3.06667, 3.1, 3.13333, 3.16667, 3.2, 3.23333, 3.26667, 3.3, 3.33333, 3.36667, 3.4, 3.43333, 3.46667, 3.5, 3.53333, 3.56667, 4.36667, 4.4, 4.43333, 4.46667, 4.5, 4.53333, 4.56667, 4.6, 4.63333, 4.66667, 4.7, 4.73333, 4.76667, 4.8, 4.83333, 4.86667, 4.9, 4.93333, 4.96667, 5, 5.03333, 5.06667, 5.1, 5.13333, 5.16667, 5.2, 5.23333, 5.26667, 5.3, 5.33333, 5.36667, 5.4, 5.43333, 5.46667, 5.5, 5.53333, 5.56667, 5.6, 5.63333, 5.66667, 6.83333, 6.86667, 6.9, 6.93333, 6.96667, 7, 7.03333, 7.06667, 7.1, 7.13333, 7.16667, 7.2, 7.23333, 7.26667, 7.3, 7.33333, 7.36667, 7.4, 7.43333, 7.46667, 7.5, 7.53333, 7.56667, 7.6, 7.63333, 7.66667, 7.7, 7.73333, 7.76667, 7.8, 7.83333, 7.86667, 7.9, 7.93333, 7.96667, 8, 8.03333, 8.06667, 8.1, 8.13333, 8.16667, 8.2, 8.23333, 8.26667, 8.3, 8.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0.184722, 0), Vector2(0.460191, 0), Vector2(0.846485, 0), Vector2(1.38819, 0), Vector2(2.14783, 0), Vector2(3.21307, 0), Vector2(4.70688, 0), Vector2(6.80166, 0), Vector2(9.73918, 0), Vector2(13.8585, 0), Vector2(19.6351, 0), Vector2(27.7356, 0), Vector2(39.0951, 0), Vector2(55.0245, 0), Vector2(77.3626, 0), Vector2(108.687, 0), Vector2(152.615, 0), Vector2(214.214, 0), Vector2(300.596, 0), Vector2(421.729, 0), Vector2(578.06, 0), Vector2(699.254, 0), Vector2(785.679, 0), Vector2(847.309, 0), Vector2(891.258, 0), Vector2(922.599, 0), Vector2(944.948, 0), Vector2(960.885, 0), Vector2(972.25, 0), Vector2(980.355, 0), Vector2(986.134, 0), Vector2(990.256, 0), Vector2(993.195, 0), Vector2(995.291, 0), Vector2(996.785, 0), Vector2(997.851, 0), Vector2(998.611, 0), Vector2(999.153, 0), Vector2(999.539, 0), Vector2(999.815, 0), Vector2(1000, 0), Vector2(1000, 0), Vector2(1000, 0.196698), Vector2(1000, 0.494074), Vector2(1000, 0.918382), Vector2(1000, 1.5238), Vector2(1000, 2.38763), Vector2(1000, 3.62018), Vector2(1000, 5.37883), Vector2(1000, 7.88813), Vector2(1000, 11.4685), Vector2(1000, 16.5771), Vector2(1000, 23.8662), Vector2(1000, 34.2666), Vector2(1000, 49.1063), Vector2(1000, 70.2802), Vector2(1000, 100.492), Vector2(1000, 143.599), Vector2(1000, 205.105), Vector2(1000, 292.866), Vector2(1000, 418.085), Vector2(1000, 581.707), Vector2(1000, 706.989), Vector2(1000, 794.792), Vector2(1000, 856.33), Vector2(1000, 899.458), Vector2(1000, 929.685), Vector2(1000, 950.869), Vector2(1000, 965.716), Vector2(1000, 976.122), Vector2(1000, 983.414), Vector2(1000, 988.526), Vector2(1000, 992.108), Vector2(1000, 994.618), Vector2(1000, 996.378), Vector2(1000, 997.611), Vector2(1000, 998.475), Vector2(1000, 999.081), Vector2(1000, 999.505), Vector2(1000, 999.803), Vector2(1000, 1000), Vector2(1000, 1000), Vector2(999.836, 1000), Vector2(999.596, 1000), Vector2(999.27, 1000), Vector2(998.826, 1000), Vector2(998.222, 1000), Vector2(997.4, 1000), Vector2(996.281, 1000), Vector2(994.759, 1000), Vector2(992.688, 1000), Vector2(989.869, 1000), Vector2(986.033, 1000), Vector2(980.814, 1000), Vector2(973.711, 1000), Vector2(964.046, 1000), Vector2(950.894, 1000), Vector2(932.996, 1000), Vector2(908.642, 1000), Vector2(875.5, 1000), Vector2(830.401, 1000), Vector2(769.031, 1000), Vector2(685.52, 1000), Vector2(571.878, 1000), Vector2(428.336, 1000), Vector2(314.638, 1000), Vector2(231.085, 1000), Vector2(169.684, 1000), Vector2(124.563, 1000), Vector2(91.4043, 1000), Vector2(67.0375, 1000), Vector2(49.1311, 1000), Vector2(35.9723, 1000), Vector2(26.3023, 1000), Vector2(19.1961, 1000), Vector2(13.974, 1000), Vector2(10.1365, 1000), Vector2(7.31641, 1000), Vector2(5.24402, 1000), Vector2(3.72113, 1000), Vector2(2.60193, 1000), Vector2(1.77948, 1000), Vector2(1.17517, 1000), Vector2(0.731018, 1000), Vector2(0.404663, 1000), Vector2(0.164795, 1000), Vector2(0, 1000)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("words/godot/Label4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("words/godot/Label5:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("words/godot/TextureRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("words/Random phrases/Label:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("words/Random phrases/Label3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 6.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("words/credits2/Label:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 7.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("words/credits2/Label2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 8.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("words/credits2/Label3:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Camera2D:zoom")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(8.5984, 8.63173, 8.66506, 8.6984, 8.73173, 8.76507, 8.7984, 8.83173, 8.86506, 8.8984, 8.93173, 8.96507, 8.9984, 9.03173, 9.06506, 9.0984, 9.13173, 9.16506, 9.1984, 9.23173, 9.26507, 9.2984, 9.33173, 9.36506, 9.3984, 9.43173, 9.46507, 9.4984, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.00009, 1.00009), Vector2(1.00023, 1.00023), Vector2(1.0004, 1.0004), Vector2(1.00062, 1.00062), Vector2(1.00091, 1.00091), Vector2(1.00128, 1.00128), Vector2(1.00175, 1.00175), Vector2(1.00237, 1.00237), Vector2(1.00317, 1.00317), Vector2(1.0042, 1.0042), Vector2(1.00553, 1.00553), Vector2(1.00725, 1.00725), Vector2(1.00948, 1.00948), Vector2(1.01235, 1.01235), Vector2(1.01606, 1.01606), Vector2(1.02086, 1.02086), Vector2(1.02706, 1.02706), Vector2(1.03506, 1.03506), Vector2(1.04541, 1.04541), Vector2(1.05878, 1.05878), Vector2(1.07606, 1.07606), Vector2(1.09838, 1.09838), Vector2(1.12722, 1.12722), Vector2(1.16448, 1.16448), Vector2(1.21263, 1.21263), Vector2(1.27485, 1.27485), Vector2(1.35523, 1.35523), Vector2(1.36, 1.36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_55j0v"]
+_data = {
+&"RESET": SubResource("Animation_55j0v"),
+&"menu intro": SubResource("Animation_nd847")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_nd847")
+random_phrases = Array[PackedStringArray]([PackedStringArray("you fake it", "we make it"), PackedStringArray("protect the video", "from youtube kids"), PackedStringArray("lua are a", "pain in my a**")])
+
+[node name="words" type="Node2D" parent="."]
+
+[node name="credits" type="Node2D" parent="words"]
+
+[node name="Label" type="Label" parent="words/credits"]
+visible = false
+offset_left = 2.0
+offset_top = 244.0
+offset_right = 1169.0
+offset_bottom = 296.0
+text = "superL132"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="words/credits"]
+visible = false
+offset_left = 2.0
+offset_top = 324.0
+offset_right = 1174.0
+offset_bottom = 376.0
+text = "mastertrapmon"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="words/credits"]
+visible = false
+offset_left = 2.0
+offset_top = 405.0
+offset_right = 1174.0
+offset_bottom = 457.0
+text = "mega mango"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="credits2" type="Node2D" parent="words"]
+position = Vector2(0, 1000)
+
+[node name="Label" type="Label" parent="words/credits2"]
+offset_left = 2.0
+offset_top = 244.0
+offset_right = 1169.0
+offset_bottom = 296.0
+text = "friday"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="words/credits2"]
+offset_left = 2.0
+offset_top = 324.0
+offset_right = 1174.0
+offset_bottom = 376.0
+text = "night"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="words/credits2"]
+offset_left = 2.0
+offset_top = 405.0
+offset_right = 1174.0
+offset_bottom = 457.0
+text = "funkin"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Random phrases" type="Node2D" parent="words"]
+position = Vector2(1000, 1000)
+
+[node name="Label" type="Label" parent="words/Random phrases"]
+offset_left = 2.0
+offset_top = 285.0
+offset_right = 1169.0
+offset_bottom = 337.0
+text = "Phrase1"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="words/Random phrases"]
+offset_left = 2.0
+offset_top = 368.0
+offset_right = 1174.0
+offset_bottom = 420.0
+text = "phrase2"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="godot" type="Node2D" parent="words"]
+
+[node name="Label4" type="Label" parent="words/godot"]
+offset_left = 999.0
+offset_top = 139.0
+offset_right = 2166.0
+offset_bottom = 191.0
+text = "made with :"
+label_settings = SubResource("LabelSettings_fwsbl")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label5" type="Label" parent="words/godot"]
+z_index = 1
+offset_left = 999.0
+offset_top = 474.0
+offset_right = 2166.0
+offset_bottom = 526.0
+text = "godot engine"
+label_settings = SubResource("LabelSettings_55j0v")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="words/godot"]
+offset_left = 1430.0
+offset_top = 191.0
+offset_right = 1724.0
+offset_bottom = 485.0
+texture = ExtResource("3_l206l")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+offset = Vector2(576, 324)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = -5
+offset_right = 1169.0
+offset_bottom = 678.0
+color = Color(0, 0, 0, 1)
+
+[node name="freakyMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_55j0v")
+bus = &"Music"
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_55j0v")
+}
+autoplay = "menu intro"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

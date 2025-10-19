@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="weekData" load_steps=2 format=3 uid="uid://bq4wyy1ikpi33"]
+
+[ext_resource type="Script" uid="uid://drlb7gm6dyqmo" path="res://Resources/Editor-Engine/scripts/week_data.gd" id="1_f65bs"]
+
+[resource]
+script = ExtResource("1_f65bs")
+week_desc = "TEACHING TIME!!!"
+tracks = Array[String](["Tutorial"])
+dificulties = Array[String](["normal"])
+song_colors = Array[Color]([Color(0.241156, 0.241156, 0.241156, 1)])
+metadata/_custom_type_script = "uid://drlb7gm6dyqmo"

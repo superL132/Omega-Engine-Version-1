@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Chart" load_steps=2 format=3 uid="uid://qaed5hvymk"]
+
+[ext_resource type="Script" uid="uid://b7jcuetc7n05c" path="res://Resources/Editor-Engine/scripts/charts.gd" id="1_xjkjf"]
+
+[resource]
+script = ExtResource("1_xjkjf")
+name = "Blurt"
+bpm = 135
+voices = true
+scroll_speed = 1.2
+artist = "Mega Mango"
+album = "Koen and Aster"
+bf = ["bf", 1]
+dad = ["dad", 3]
+gf = ["gf", 2]
+stage = "stage"
+chart_data = {
+"events": {},
+"notes": {
+1.0: "PR"
+}
+}
+metadata/_custom_type_script = "uid://b7jcuetc7n05c"

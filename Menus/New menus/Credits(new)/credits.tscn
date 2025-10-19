@@ -1,0 +1,206 @@
+[gd_scene load_steps=18 format=3 uid="uid://tc8kmlcxyv54"]
+
+[ext_resource type="Script" uid="uid://cw3xolvcvu3if" path="res://Menus/New menus/Credits(new)/credits.gd" id="1_31hmj"]
+[ext_resource type="FontFile" uid="uid://ck56vxwoqe7wy" path="res://Resources/Fonts/fnf font.ttf" id="1_t4kg3"]
+[ext_resource type="Texture2D" uid="uid://c32515f40554s" path="res://Resources/Texture/icons/credits/superL132.png" id="2_31hmj"]
+[ext_resource type="Script" uid="uid://cp3ay87hj4j02" path="res://Menus/New menus/Credits(new)/template.gd" id="3_02kyt"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="4_sj3x5"]
+[ext_resource type="FontFile" uid="uid://2n3yaj3wiy1w" path="res://Resources/Fonts/fnf font outline.ttf" id="5_c6e08"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="7_o48cn"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="7_un2q0"]
+[ext_resource type="AudioStream" uid="uid://cxjyqjatexvgp" path="res://Resources/Music/Menu/freakyMenu.ogg" id="8_un2q0"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="9_qiguc"]
+[ext_resource type="AudioStream" uid="uid://75o37attgbc6" path="res://Resources/Sounds/SFX/Menu/confirmMenu.ogg" id="11_qiguc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2um22"]
+font = ExtResource("1_t4kg3")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8s6j"]
+font = ExtResource("5_c6e08")
+font_size = 66
+
+[sub_resource type="LabelSettings" id="LabelSettings_qiguc"]
+font = ExtResource("7_un2q0")
+font_size = 25
+
+[sub_resource type="Animation" id="Animation_odqhc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ghtyc"]
+resource_name = "selected"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.00059, 1.00059), Vector2(1.00139, 1.00139), Vector2(1.00234, 1.00234), Vector2(1.00344, 1.00344), Vector2(1.00475, 1.00475), Vector2(1.00628, 1.00628), Vector2(1.00807, 1.00807), Vector2(1.01018, 1.01018), Vector2(1.01267, 1.01267), Vector2(1.01558, 1.01558), Vector2(1.01901, 1.01901), Vector2(1.02303, 1.02303), Vector2(1.02776, 1.02776), Vector2(1.03331, 1.03331), Vector2(1.03984, 1.03984), Vector2(1.04751, 1.04751), Vector2(1.05652, 1.05652), Vector2(1.0671, 1.0671), Vector2(1.07954, 1.07954), Vector2(1.09415, 1.09415), Vector2(1.11132, 1.11132), Vector2(1.13149, 1.13149), Vector2(1.15519, 1.15519), Vector2(1.18304, 1.18304), Vector2(1.21575, 1.21575), Vector2(1.25419, 1.25419), Vector2(1.29935, 1.29935), Vector2(1.35241, 1.35241), Vector2(1.41476, 1.41476), Vector2(1.488, 1.488), Vector2(1.57406, 1.57406), Vector2(1.67518, 1.67518), Vector2(1.79398, 1.79398), Vector2(1.93356, 1.93356), Vector2(2.09755, 2.09755), Vector2(2.29023, 2.29023), Vector2(2.51661, 2.51661), Vector2(2.78259, 2.78259), Vector2(3.0951, 3.0951), Vector2(3.46226, 3.46226), Vector2(3.89365, 3.89365), Vector2(4.4005, 4.4005), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfnkr"]
+_data = {
+&"RESET": SubResource("Animation_odqhc"),
+&"selected": SubResource("Animation_ghtyc")
+}
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_31hmj")
+
+[node name="Credit Labels" type="Node2D" parent="."]
+position = Vector2(-571, 0)
+
+[node name="Control" type="Control" parent="Credit Labels"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -20.0
+offset_right = 999.0
+offset_bottom = 20.0
+
+[node name="Template" type="Label" parent="Credit Labels/Control"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = -610.0
+offset_right = 986.0
+offset_bottom = -558.0
+text = "superL132"
+label_settings = SubResource("LabelSettings_2um22")
+script = ExtResource("3_02kyt")
+
+[node name="TextureRect" type="TextureRect" parent="Credit Labels/Control/Template"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0882353
+anchor_top = -0.423077
+anchor_right = -0.00588235
+anchor_bottom = 0.923077
+offset_left = -35.0
+offset_top = -12.0
+offset_right = -5.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_31hmj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Credit Labels/Control"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = -735.0
+offset_right = 1251.0
+offset_bottom = -659.0
+text = "Main Team"
+label_settings = SubResource("LabelSettings_l8s6j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -5
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("4_sj3x5")
+
+[node name="Panel" type="Panel" parent="Camera2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -487.0
+offset_top = 208.0
+offset_right = 487.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera2D/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = -12.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is where the fawkin description is gonna be placed >:3"
+label_settings = SubResource("LabelSettings_qiguc")
+autowrap_mode = 3
+
+[node name="Anim" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_dfnkr")
+}
+autoplay = "selected"
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 10
+offset_left = -674.0
+offset_top = -382.0
+offset_right = 710.0
+offset_bottom = 433.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_o48cn")
+
+[node name="freakyMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_un2q0")
+bus = &"Music"
+parameters/looping = true
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qiguc")
+max_polyphony = 2
+
+[node name="BackSceneTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="confirmMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_qiguc")
+
+[connection signal="timeout" from="BackSceneTimer" to="." method="_on_back_scene_timer_timeout"]

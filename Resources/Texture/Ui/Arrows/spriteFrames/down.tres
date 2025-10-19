@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bkpy7slyoubi1"]
+
+[ext_resource type="Texture2D" uid="uid://dbtfxtfsxjdou" path="res://Resources/Texture/Ui/Arrows/atlas textures/down/down1.tres" id="1_efpqj"]
+[ext_resource type="Texture2D" uid="uid://7fo13rqfsuf4" path="res://Resources/Texture/Ui/Arrows/atlas textures/down/down2.tres" id="2_o13d1"]
+[ext_resource type="Texture2D" uid="uid://cwuuhvqowide8" path="res://Resources/Texture/Ui/Arrows/atlas textures/down/down3.tres" id="3_70csr"]
+[ext_resource type="Texture2D" uid="uid://dal4xa7hq01ow" path="res://Resources/Texture/Ui/Arrows/atlas textures/down/down4.tres" id="4_p0y63"]
+[ext_resource type="Texture2D" uid="uid://d0yuix0255rk8" path="res://Resources/Texture/Ui/Arrows/atlas textures/down/down5.tres" id="5_bnt37"]
+[ext_resource type="Texture2D" uid="uid://52bgrw4usita" path="res://Resources/Texture/Ui/Arrows/atlas textures/down/down6.tres" id="6_yla4r"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_efpqj")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": ExtResource("3_70csr")
+}, {
+"duration": 0.3,
+"texture": ExtResource("2_o13d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p0y63")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bnt37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yla4r")
+}],
+"loop": false,
+"name": &"miss",
+"speed": 5.0
+}]

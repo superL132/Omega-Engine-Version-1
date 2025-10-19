@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddnaukqbm1go1"]
+
+[ext_resource type="Texture2D" uid="uid://b8m3lmigqy7ch" path="res://Resources/Editor-Engine/References/Room1/Screenshot (959).png" id="1_haj35"]
+[ext_resource type="Texture2D" uid="uid://bj1fxvgilibjc" path="res://Resources/Editor-Engine/References/Room1/Screenshot (960).png" id="2_433c6"]
+[ext_resource type="Texture2D" uid="uid://tp56vc4omg10" path="res://Resources/Scenes/3D/Team Justice's Base/clouds_bg.png" id="2_v0wl1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_haj35"]
+sky_top_color = Color(0.423529, 0.458824, 0.462745, 1)
+sky_cover = ExtResource("2_v0wl1")
+sky_cover_modulate = Color(0.396889, 0.396889, 0.396889, 1)
+ground_bottom_color = Color(0.309804, 0.341176, 0.270588, 1)
+ground_horizon_color = Color(0.309804, 0.341176, 0.270588, 1)
+
+[sub_resource type="Sky" id="Sky_v0wl1"]
+sky_material = SubResource("ProceduralSkyMaterial_haj35")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_433c6"]
+background_mode = 2
+sky = SubResource("Sky_v0wl1")
+ambient_light_sky_contribution = 0.05
+tonemap_mode = 2
+fog_mode = 1
+fog_density = 1.0
+volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxfvh"]
+albedo_color = Color(0.435294, 0.34902, 0.286275, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_433c6"]
+
+[node name="Edel and Justice\'s room" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_433c6")
+
+[node name="Ref" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Ref"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.21571, 5.511, -12.207)
+texture = ExtResource("1_haj35")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Ref"]
+transform = Transform3D(0.896339, 0, -0.443368, 0, 1, 0, 0.443368, 0, 0.896339, 13.7655, 3.93603, -12.7492)
+pixel_size = 0.005
+texture = ExtResource("2_433c6")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.44537)
+size = Vector3(15, 0.05, 27.8907)
+material = SubResource("StandardMaterial3D_qxfvh")
+
+[node name="celing" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.60469, 6.67676)
+size = Vector3(15, 0.05, 28.3535)
+material = SubResource("StandardMaterial3D_433c6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53686, 3.20483, 6.5498)
+size = Vector3(0.172852, 7.40967, 28.0996)
+material = SubResource("StandardMaterial3D_433c6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.537, 3.205, 6.66449)
+size = Vector3(0.172852, 7.40967, 28.329)
+material = SubResource("StandardMaterial3D_433c6")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.05321)
+polygon = PackedVector2Array(-8, 0, -8, 7, 8, 7, 8, 0, 2.2, 0, 2, 3, 1.19, 4.251, 0, 4.545, -1.19, 4.258, -2, 3, -2.2, 0)
+smooth_faces = true
+material = SubResource("StandardMaterial3D_433c6")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20477, 20.372)
+size = Vector3(16.5947, 7.40955, 1)
+material = SubResource("StandardMaterial3D_433c6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.978593, -0.0676787, -0.194361, -0.00854246, -0.956927, 0.290202, -0.20563, -0.282329, -0.93702, 0, 0, 0)
+shadow_enabled = true
+shadow_bias = 0.0
+sky_mode = 1
+
+[node name="objects" type="Node3D" parent="."]
+
+[node name="door" type="Node3D" parent="."]
+transform = Transform3D(-0.618614, 0, -0.785695, 0, 1, 0, 0.785695, 0, -0.618614, -2.18641, 0, -7.44631)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="door"]
+polygon = PackedVector2Array(0, 0, 0.181717, 2.95374, 1.00929, 4.24905, 2.21374, 4.52066, 3.39298, 4.24649, 4.19699, 2.97746, 4.35, 0)
+depth = 0.2

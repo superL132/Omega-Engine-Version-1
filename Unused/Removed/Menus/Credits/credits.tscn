@@ -1,0 +1,400 @@
+[gd_scene load_steps=27 format=3 uid="uid://dncyqqe6gdvbb"]
+
+[ext_resource type="Script" uid="uid://dgcw2wpbw74x5" path="res://Unused/Removed/Menus/Credits/credits.gd" id="1_x5i85"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="3_rmdwe"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="3_tin7q"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="4_pcwfs"]
+[ext_resource type="AudioStream" uid="uid://cxjyqjatexvgp" path="res://Resources/Music/Menu/freakyMenu.ogg" id="5_01mcu"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="6_qm473"]
+[ext_resource type="FontFile" uid="uid://ck56vxwoqe7wy" path="res://Resources/Fonts/fnf font.ttf" id="8_cyneb"]
+[ext_resource type="Texture2D" uid="uid://c32515f40554s" path="res://Resources/Texture/icons/credits/superL132.png" id="8_o2ntw"]
+[ext_resource type="Texture2D" uid="uid://djfl8nktvfg4i" path="res://Resources/Texture/icons/credits/mastertrapmon.png" id="9_s2mxi"]
+[ext_resource type="Texture2D" uid="uid://c4ai1eurdb0rf" path="res://Resources/Texture/icons/credits/missing_icon.png" id="10_phlcv"]
+[ext_resource type="FontFile" uid="uid://luh5ygfe3eho" path="res://Resources/Fonts/Phantomuff Difficult Font.ttf" id="11_2sxry"]
+[ext_resource type="Texture2D" uid="uid://bed7saxm03chp" path="res://icon.svg" id="12_tg6gc"]
+[ext_resource type="Texture2D" uid="uid://byq86osebr4hp" path="res://Resources/Texture/icons/credits/Red_Rose_Transparent_PNG_Clip_Art-1809525263.png" id="13_cyneb"]
+[ext_resource type="Texture2D" uid="uid://dcyywmwefaiwj" path="res://Resources/Texture/icons/credits/Dahlia-Red-Download-Free-PNG.png" id="14_d24tq"]
+
+[sub_resource type="Animation" id="Animation_1yf0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c5r6d"]
+resource_name = "select"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.00056, 1.00056), Vector2(1.00132, 1.00132), Vector2(1.0022, 1.0022), Vector2(1.00323, 1.00323), Vector2(1.00444, 1.00444), Vector2(1.00584, 1.00584), Vector2(1.00748, 1.00748), Vector2(1.00939, 1.00939), Vector2(1.01163, 1.01163), Vector2(1.01423, 1.01423), Vector2(1.01726, 1.01726), Vector2(1.0208, 1.0208), Vector2(1.02493, 1.02493), Vector2(1.02975, 1.02975), Vector2(1.03537, 1.03537), Vector2(1.04193, 1.04193), Vector2(1.04958, 1.04958), Vector2(1.0585, 1.0585), Vector2(1.06891, 1.06891), Vector2(1.08105, 1.08105), Vector2(1.09521, 1.09521), Vector2(1.11173, 1.11173), Vector2(1.13101, 1.13101), Vector2(1.15349, 1.15349), Vector2(1.17972, 1.17972), Vector2(1.21031, 1.21031), Vector2(1.246, 1.246), Vector2(1.28763, 1.28763), Vector2(1.3362, 1.3362), Vector2(1.39285, 1.39285), Vector2(1.45894, 1.45894), Vector2(1.53603, 1.53603), Vector2(1.62596, 1.62596), Vector2(1.73087, 1.73087), Vector2(1.85324, 1.85324), Vector2(1.996, 1.996), Vector2(2.16253, 2.16253), Vector2(2.35679, 2.35679), Vector2(2.5834, 2.5834), Vector2(2.84775, 2.84775), Vector2(3.15612, 3.15612), Vector2(3.51584, 3.51584), Vector2(3.93547, 3.93547), Vector2(4.42498, 4.42498), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tr81"]
+_data = {
+&"RESET": SubResource("Animation_1yf0l"),
+&"select": SubResource("Animation_c5r6d")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_78chd"]
+font = ExtResource("3_tin7q")
+font_size = 25
+
+[sub_resource type="Animation" id="Animation_pgbb7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(585, -310)]
+}
+
+[sub_resource type="Animation" id="Animation_dfd4m"]
+resource_name = "scroll"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 3, 3.03333, 3.06667, 3.1, 3.13333, 3.16667, 3.2, 3.23333, 3.26667, 3.3, 3.33333, 3.36667, 3.4, 3.43333, 3.46667, 3.5, 3.53333, 3.56667, 3.6, 3.63333, 3.66667, 3.7, 3.73333, 3.76667, 3.8, 3.83333, 3.86667, 3.9, 3.93333, 3.96667, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(585, -310), Vector2(464.194, -310), Vector2(368.31, -310), Vector2(292.207, -310), Vector2(231.805, -310), Vector2(183.863, -310), Vector2(145.811, -310), Vector2(115.61, -310), Vector2(91.6389, -310), Vector2(72.6131, -310), Vector2(57.5124, -310), Vector2(45.5269, -310), Vector2(36.014, -310), Vector2(28.4637, -310), Vector2(22.4709, -310), Vector2(17.7145, -310), Vector2(13.9394, -310), Vector2(10.943, -310), Vector2(8.56476, -310), Vector2(6.67719, -310), Vector2(5.17896, -310), Vector2(3.98987, -310), Vector2(3.04608, -310), Vector2(2.297, -310), Vector2(1.70245, -310), Vector2(1.23053, -310), Vector2(0.856018, -310), Vector2(0.558716, -310), Vector2(0.322754, -310), Vector2(0.135498, -310), Vector2(0, -310), Vector2(0, -310), Vector2(0.134779, -310), Vector2(0.321865, -310), Vector2(0.557578, -310), Vector2(0.854558, -310), Vector2(1.22873, -310), Vector2(1.70016, -310), Vector2(2.29412, -310), Vector2(3.04246, -310), Vector2(3.98531, -310), Vector2(5.17324, -310), Vector2(6.66992, -310), Vector2(8.55562, -310), Vector2(10.9315, -310), Vector2(13.9248, -310), Vector2(17.6962, -310), Vector2(22.4479, -310), Vector2(28.4347, -310), Vector2(35.9775, -310), Vector2(45.4809, -310), Vector2(57.4544, -310), Vector2(72.54, -310), Vector2(91.5467, -310), Vector2(115.494, -310), Vector2(145.665, -310), Vector2(183.678, -310), Vector2(231.572, -310), Vector2(291.915, -310), Vector2(367.942, -310), Vector2(463.73, -310), Vector2(585, -310)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_56m11"]
+_data = {
+&"RESET": SubResource("Animation_pgbb7"),
+&"scroll": SubResource("Animation_dfd4m")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_24v3o"]
+font = ExtResource("3_tin7q")
+font_size = 20
+font_color = Color(0.94, 0.94, 0.94, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uvf7d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cv65k"]
+font = ExtResource("11_2sxry")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_klxqv"]
+font = ExtResource("8_cyneb")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yq1bu"]
+load_path = "res://.godot/imported/missing_icon.png-e729a786cd3d27a3c5c59a357609a00f.ctex"
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_x5i85")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MenuDesat" type="Sprite2D" parent="Camera2D"]
+z_index = -5
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("3_rmdwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_5tr81")
+}
+autoplay = "select"
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 10
+offset_left = -674.0
+offset_top = -382.0
+offset_right = 710.0
+offset_bottom = 433.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="Panel" parent="Camera2D"]
+z_index = 5
+offset_left = -579.0
+offset_top = 174.0
+offset_right = 580.0
+offset_bottom = 366.0
+
+[node name="Label" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 11.0
+offset_right = 1122.0
+offset_bottom = 138.0
+text = "This is where the fawkin description is gonna be placed >:3"
+label_settings = SubResource("LabelSettings_78chd")
+autowrap_mode = 3
+
+[node name="Panel2" type="Panel" parent="Camera2D"]
+z_index = 5
+offset_left = 585.0
+offset_top = -310.0
+offset_right = 1163.0
+offset_bottom = -236.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Panel2"]
+libraries = {
+&"": SubResource("AnimationLibrary_56m11")
+}
+
+[node name="Label" type="Label" parent="Camera2D/Panel2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 565.0
+offset_bottom = 64.0
+text = "{websiteLink}"
+label_settings = SubResource("LabelSettings_24v3o")
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D"]
+position = Vector2(-549, -199)
+mesh = SubResource("QuadMesh_uvf7d")
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pcwfs")
+
+[node name="freakyMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_01mcu")
+bus = &"Music"
+parameters/looping = true
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qm473")
+max_polyphony = 2
+
+[node name="BackSceneTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Credit Names" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main crew" type="Label" parent="Credit Names"]
+z_index = 5
+layout_mode = 0
+offset_left = -580.0
+offset_top = -198.0
+offset_right = 575.0
+offset_bottom = -91.0
+text = "The Mod Crew"
+label_settings = SubResource("LabelSettings_cv65k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contributors" type="Label" parent="Credit Names"]
+z_index = 5
+layout_mode = 0
+offset_left = -580.0
+offset_top = 603.0
+offset_right = 575.0
+offset_bottom = 710.0
+text = "Contributors"
+label_settings = SubResource("LabelSettings_cv65k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main crew2" type="Node2D" parent="Credit Names"]
+
+[node name="superL132" type="Label" parent="Credit Names/Main crew2"]
+offset_left = -574.0
+offset_right = 575.0
+offset_bottom = 88.0
+text = "superL132"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Main crew2/superL132"]
+z_index = 1
+position = Vector2(350, 40)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_o2ntw")
+
+[node name="Mastertrapmon" type="Label" parent="Credit Names/Main crew2"]
+offset_left = -574.0
+offset_top = 150.0
+offset_right = 575.0
+offset_bottom = 238.0
+text = "mastertrapmon"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Main crew2/Mastertrapmon"]
+z_index = 1
+position = Vector2(300, 40)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_s2mxi")
+
+[node name="starverse" type="Label" parent="Credit Names/Main crew2"]
+offset_left = -574.0
+offset_top = 300.0
+offset_right = 575.0
+offset_bottom = 388.0
+text = "star verse"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Main crew2/starverse"]
+z_index = 1
+position = Vector2(350, 40)
+texture = ExtResource("10_phlcv")
+
+[node name="mega mango" type="Label" parent="Credit Names/Main crew2"]
+offset_left = -574.0
+offset_top = 450.0
+offset_right = 575.0
+offset_bottom = 538.0
+text = "Mega Mango"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Main crew2/mega mango"]
+z_index = 1
+position = Vector2(350, 40)
+texture = SubResource("CompressedTexture2D_yq1bu")
+
+[node name="Contributors2" type="Node2D" parent="Credit Names"]
+
+[node name="mashedmarsh" type="Label" parent="Credit Names/Contributors2"]
+offset_left = -574.0
+offset_top = 750.0
+offset_right = 575.0
+offset_bottom = 838.0
+text = "Mashed Marsh"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Contributors2/mashedmarsh"]
+z_index = 1
+position = Vector2(334, 40)
+texture = SubResource("CompressedTexture2D_yq1bu")
+
+[node name="blaskey" type="Label" parent="Credit Names/Contributors2"]
+offset_left = -574.0
+offset_top = 900.0
+offset_right = 575.0
+offset_bottom = 988.0
+text = "cocoak"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Contributors2/blaskey"]
+z_index = 1
+position = Vector2(415, 40)
+texture = SubResource("CompressedTexture2D_yq1bu")
+
+[node name="godot" type="Label" parent="Credit Names/Contributors2"]
+offset_left = -574.0
+offset_top = 1050.0
+offset_right = 575.0
+offset_bottom = 1138.0
+text = "godot engine"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Contributors2/godot"]
+z_index = 1
+position = Vector2(326, 40)
+texture = ExtResource("12_tg6gc")
+
+[node name="Rosa" type="Label" parent="Credit Names/Contributors2"]
+offset_left = -574.0
+offset_top = 1200.0
+offset_right = 575.0
+offset_bottom = 1288.0
+text = "rosa"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Contributors2/Rosa"]
+z_index = 1
+position = Vector2(441, 40)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("13_cyneb")
+
+[node name="kitsune" type="Label" parent="Credit Names/Contributors2"]
+offset_left = -574.0
+offset_top = 1350.0
+offset_right = 575.0
+offset_bottom = 1438.0
+text = "kitsune"
+label_settings = SubResource("LabelSettings_klxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Credit Names/Contributors2/kitsune"]
+z_index = 1
+position = Vector2(399, 40)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("14_d24tq")
+
+[connection signal="timeout" from="BackSceneTimer" to="." method="_on_back_scene_timer_timeout"]

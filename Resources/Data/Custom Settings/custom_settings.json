@@ -1,0 +1,14 @@
+{
+    "quickBgFade": {
+        "name": "Quick Background Fade",
+        "default": false,
+        "desc": "The background does not have a transition effect.",
+        "section": "General"
+    },
+    "lyrics": {
+        "name": "Lyrics/Captions",
+        "default": true,
+        "desc": "Adds words to the bottom if any are availuable in the chart.",
+        "section": "General"
+    }
+}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://fd2r1miinyck"]
+
+[ext_resource type="Script" uid="uid://cvph35a2rs1xs" path="res://Resources/Editor-Engine/scripts/character_data.gd" id="1_e08qw"]
+
+[resource]
+script = ExtResource("1_e08qw")
+name = "Daddy Dearest"
+default_type = "Dad"
+twoIdle = false
+idle = "idle"
+idle2 = ""
+left = ""
+right = ""
+up = ""
+down = ""
+metadata/_custom_type_script = "uid://cvph35a2rs1xs"

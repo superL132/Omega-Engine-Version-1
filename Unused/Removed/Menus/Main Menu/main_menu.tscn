@@ -1,0 +1,231 @@
+[gd_scene load_steps=35 format=3 uid="uid://b7qunm86pkow3"]
+
+[ext_resource type="Script" uid="uid://cfipoq7f1smam" path="res://Unused/Removed/Menus/Main Menu/main_menu.gd" id="1_s6qyu"]
+[ext_resource type="Texture2D" uid="uid://b027qfhsh4kha" path="res://Resources/Texture/Menus/Main Menu/Words/Story Mode/basic0.png" id="2_e3nyj"]
+[ext_resource type="Texture2D" uid="uid://rjlo75lr6s24" path="res://Resources/Texture/Menus/Main Menu/Words/Story Mode/basic3.png" id="3_upkb2"]
+[ext_resource type="Texture2D" uid="uid://bd4o8gutvq60b" path="res://Resources/Texture/Menus/Main Menu/Words/Story Mode/basic6.png" id="4_7awxd"]
+[ext_resource type="Texture2D" uid="uid://d1ivim28gb18n" path="res://Resources/Texture/Menus/Main Menu/Words/Story Mode/white0.png" id="5_d1n07"]
+[ext_resource type="Texture2D" uid="uid://bah8k5vc6l7hv" path="res://Resources/Texture/Menus/Main Menu/Words/Story Mode/white1.png" id="6_vw1j3"]
+[ext_resource type="Texture2D" uid="uid://cnexvgf2fkx8b" path="res://Resources/Texture/Menus/Main Menu/Words/Story Mode/white2.png" id="7_igjdh"]
+[ext_resource type="Texture2D" uid="uid://df5ypo2krx7fh" path="res://Resources/Texture/Menus/Main Menu/Words/Free Play/basic0.png" id="8_3cdn3"]
+[ext_resource type="Texture2D" uid="uid://dj6x1bcqn4myb" path="res://Resources/Texture/Menus/Main Menu/Words/Free Play/basic3.png" id="9_dybun"]
+[ext_resource type="Texture2D" uid="uid://bbrj3sw2fcem1" path="res://Resources/Texture/Menus/Main Menu/Words/Free Play/basic6.png" id="10_436dq"]
+[ext_resource type="Texture2D" uid="uid://bs16ujcj4fk1l" path="res://Resources/Texture/Menus/Main Menu/Words/Free Play/white0.png" id="11_k7hdg"]
+[ext_resource type="Texture2D" uid="uid://cj8w531l15l8b" path="res://Resources/Texture/Menus/Main Menu/Words/Free Play/white1.png" id="12_vyqom"]
+[ext_resource type="Texture2D" uid="uid://coa1iit0dsgq6" path="res://Resources/Texture/Menus/Main Menu/Words/Free Play/white2.png" id="13_anmei"]
+[ext_resource type="Texture2D" uid="uid://cuuni02b0hnku" path="res://Resources/Texture/Menus/Main Menu/Words/Options/basic0.png" id="14_nsssa"]
+[ext_resource type="Texture2D" uid="uid://bk404slvm3wa5" path="res://Resources/Texture/Menus/Main Menu/Words/Options/basic3.png" id="15_jhc4q"]
+[ext_resource type="Texture2D" uid="uid://o5ymqpbsi5uu" path="res://Resources/Texture/Menus/Main Menu/Words/Options/basic6.png" id="16_hujs0"]
+[ext_resource type="Texture2D" uid="uid://bbkhh78knas65" path="res://Resources/Texture/Menus/Main Menu/Words/Options/white0.png" id="17_u2u7c"]
+[ext_resource type="Texture2D" uid="uid://we3ngnf47afl" path="res://Resources/Texture/Menus/Main Menu/Words/Options/white1.png" id="18_jgtya"]
+[ext_resource type="Texture2D" uid="uid://cum3p5xe533k3" path="res://Resources/Texture/Menus/Main Menu/Words/Options/white2.png" id="19_pd0de"]
+[ext_resource type="Texture2D" uid="uid://dpi8iasyh6s7h" path="res://Resources/Texture/Menus/Main Menu/Words/Credits/baisc0.png" id="20_wtt8m"]
+[ext_resource type="Texture2D" uid="uid://ciyj1x1rwk5yh" path="res://Resources/Texture/Menus/Main Menu/Words/Credits/baisc3.png" id="21_spiw5"]
+[ext_resource type="Texture2D" uid="uid://bvag57f4gnmi7" path="res://Resources/Texture/Menus/Main Menu/Words/Credits/baisc6.png" id="22_e0fr6"]
+[ext_resource type="Texture2D" uid="uid://cxwynxa3yttox" path="res://Resources/Texture/Menus/Main Menu/Words/Credits/white0.png" id="23_gpd1w"]
+[ext_resource type="Texture2D" uid="uid://by3al13id68hn" path="res://Resources/Texture/Menus/Main Menu/Words/Credits/white1.png" id="24_mjqvl"]
+[ext_resource type="Texture2D" uid="uid://cp8inwumplwa6" path="res://Resources/Texture/Menus/Main Menu/Words/Credits/white2.png" id="25_mht1w"]
+[ext_resource type="Texture2D" uid="uid://bmtwx1hbmea5g" path="res://Resources/Texture/Menus/Bgs/menuBG.png" id="26_ay3k0"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="27_3808o"]
+[ext_resource type="AudioStream" uid="uid://cxjyqjatexvgp" path="res://Resources/Music/Menu/freakyMenu.ogg" id="28_l71r1"]
+[ext_resource type="AudioStream" uid="uid://75o37attgbc6" path="res://Resources/Sounds/SFX/Menu/confirmMenu.ogg" id="29_ujqlj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4oy1s"]
+font_size = 30
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_acwyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e3nyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_upkb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7awxd")
+}],
+"loop": true,
+"name": &"basic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("5_d1n07")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_vw1j3")
+}, {
+"duration": 0.2,
+"texture": ExtResource("7_igjdh")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms72s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3cdn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dybun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_436dq")
+}],
+"loop": true,
+"name": &"basic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("11_k7hdg")
+}, {
+"duration": 0.2,
+"texture": ExtResource("12_vyqom")
+}, {
+"duration": 0.2,
+"texture": ExtResource("13_anmei")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ak7l1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_nsssa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jhc4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hujs0")
+}],
+"loop": true,
+"name": &"basic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("17_u2u7c")
+}, {
+"duration": 0.2,
+"texture": ExtResource("18_jgtya")
+}, {
+"duration": 0.2,
+"texture": ExtResource("19_pd0de")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1t8r5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_wtt8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_spiw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_e0fr6")
+}],
+"loop": true,
+"name": &"basic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("23_gpd1w")
+}, {
+"duration": 0.2,
+"texture": ExtResource("24_mjqvl")
+}, {
+"duration": 0.2,
+"texture": ExtResource("25_mht1w")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_s6qyu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+
+[node name="Label" type="Label" parent="Camera2D"]
+z_index = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = 252.0
+offset_right = -396.0
+offset_bottom = 321.0
+grow_vertical = 0
+text = "Version"
+label_settings = SubResource("LabelSettings_4oy1s")
+
+[node name="Story Mode" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_acwyk")
+animation = &"basic"
+autoplay = "basic"
+frame_progress = 0.193967
+
+[node name="Free Play" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 150)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_ms72s")
+animation = &"basic"
+autoplay = "basic"
+frame_progress = 0.0147837
+
+[node name="Options" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 300)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_ak7l1")
+animation = &"basic"
+autoplay = "basic"
+frame_progress = 0.984317
+
+[node name="Credits" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 450)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_1t8r5")
+animation = &"basic"
+autoplay = "basic"
+frame_progress = 0.712385
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0.4)
+scroll_offset = Vector2(0, 216.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -100
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("26_ay3k0")
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_3808o")
+
+[node name="freakyMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_l71r1")
+parameters/looping = true
+
+[node name="confirmMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_ujqlj")
+
+[node name="change scene" type="Timer" parent="."]
+
+[connection signal="timeout" from="change scene" to="." method="_on_change_scene_timeout"]

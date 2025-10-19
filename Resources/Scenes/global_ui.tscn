@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://ci420eiffpfqu"]
+
+[ext_resource type="Script" uid="uid://7m6k4ciggigk" path="res://Resources/Scenes/global_ui.gd" id="1_e3tyi"]
+[ext_resource type="Shader" uid="uid://bl1ykwp4fecqt" path="res://Resources/shaders/chromatic_vigniette.gdshader" id="2_dhclg"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="2_k0nfe"]
+[ext_resource type="Texture2D" uid="uid://bjae1teq4o1k3" path="res://icon.svg" id="4_2mjd8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q54dx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0034t"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mjd8"]
+font = ExtResource("2_k0nfe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24er0"]
+shader = ExtResource("2_dhclg")
+shader_parameter/r_displacement = Vector2(0.5, 0.5)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-0.5, -0.5)
+shader_parameter/height = 0.7
+shader_parameter/width = 0.5
+shader_parameter/fade = 0.7
+
+[node name="Global Ui" type="CanvasLayer" groups=["GlobalUi"]]
+layer = 128
+script = ExtResource("1_e3tyi")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.117647)
+z_index = 1
+material = SubResource("CanvasItemMaterial_q54dx")
+offset_right = 226.0
+offset_bottom = 50.0
+scale = Vector2(0.705221, 0.705221)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0034t")
+
+[node name="status" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 35.4499
+offset_right = 207.0
+offset_bottom = 58.4499
+text = "Status : Crashed / Broken"
+label_settings = SubResource("LabelSettings_2mjd8")
+
+[node name="Memory" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 196.0
+offset_bottom = 40.0
+text = "Memory : current ramMB"
+label_settings = SubResource("LabelSettings_2mjd8")
+
+[node name="FPS" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 23.0
+text = "fps : current fps"
+label_settings = SubResource("LabelSettings_2mjd8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_24er0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2mjd8")

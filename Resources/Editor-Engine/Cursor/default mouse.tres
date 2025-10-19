@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CursorAssets" load_steps=15 format=3 uid="uid://cv7qjcg31eqo1"]
+
+[ext_resource type="Texture2D" uid="uid://ct4qungqxa1c8" path="res://Resources/Texture/Cursors/cursor-cell.png" id="1_o1cva"]
+[ext_resource type="Script" uid="uid://0uy46b7267jt" path="res://Resources/Editor-Engine/scripts/mouse_resource.gd" id="1_v8tb5"]
+[ext_resource type="Texture2D" uid="uid://b88x3c4mrol70" path="res://Resources/Texture/Cursors/cursor-cross.png" id="2_jyrlj"]
+[ext_resource type="Texture2D" uid="uid://bxq1kjrgbglt3" path="res://Resources/Texture/Cursors/cursor-default.png" id="4_84ygc"]
+[ext_resource type="Texture2D" uid="uid://30tyutgk4hjn" path="res://Resources/Editor-Engine/Textures/Browser Games - Friday Night Funkin - Cursor (1).png" id="4_jyrlj"]
+[ext_resource type="Texture2D" uid="uid://crsgvk7d8cpwt" path="res://Resources/Texture/Cursors/cursor-eraser.png" id="5_bpix3"]
+[ext_resource type="Texture2D" uid="uid://rfi3owyj1b3y" path="res://Resources/Texture/Cursors/cursor-grabbing.png" id="6_wpicp"]
+[ext_resource type="Texture2D" uid="uid://br8xm3cn1s4at" path="res://Resources/Texture/Cursors/cursor-hourglass.png" id="7_8jvwi"]
+[ext_resource type="Texture2D" uid="uid://bg4yv7qloco8b" path="res://Resources/Texture/Cursors/cursor-pointer.png" id="8_ebakq"]
+[ext_resource type="Texture2D" uid="uid://bl0v0vkbsxe2i" path="res://Resources/Texture/Cursors/cursor-scroll.png" id="10_7ewfy"]
+[ext_resource type="Texture2D" uid="uid://bqsmnemof5go3" path="res://Resources/Texture/Cursors/cursor-text.png" id="11_25tc2"]
+[ext_resource type="Texture2D" uid="uid://cjeyjwr7q6sn8" path="res://Resources/Texture/Cursors/cursor-text-vertical.png" id="12_mvxc6"]
+[ext_resource type="Texture2D" uid="uid://br7omsmm6pixt" path="res://Resources/Texture/Cursors/cursor-zoom-in.png" id="13_ndkcj"]
+[ext_resource type="Texture2D" uid="uid://nndj43bdb4o5" path="res://Resources/Texture/Cursors/cursor-zoom-out.png" id="14_3dxvu"]
+
+[resource]
+script = ExtResource("1_v8tb5")
+default = ExtResource("4_jyrlj")
+cell = ExtResource("1_o1cva")
+cross = ExtResource("2_jyrlj")
+default_new = ExtResource("4_84ygc")
+eraser = ExtResource("5_bpix3")
+grabbing = ExtResource("6_wpicp")
+pointer = ExtResource("8_ebakq")
+hourGlass = ExtResource("7_8jvwi")
+scroll = ExtResource("10_7ewfy")
+textVertical = ExtResource("12_mvxc6")
+text = ExtResource("11_25tc2")
+zoomIn = ExtResource("13_ndkcj")
+zoomOut = ExtResource("14_3dxvu")
+metadata/_custom_type_script = "uid://0uy46b7267jt"

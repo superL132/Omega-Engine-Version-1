@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://3qarvgdepmjm"]
+
+[ext_resource type="Script" uid="uid://bqirh164e8sbf" path="res://Unused/Removed/GamePlayEninge/play.gd" id="1_548fn"]
+[ext_resource type="Script" uid="uid://cqkanqr1o8qpk" path="res://Resources/Editor-Engine/scripts/character.gd" id="2_eelbi"]
+[ext_resource type="Script" uid="uid://c6rxkedhxl2mh" path="res://Unused/Removed/GamePlayEninge/camera.gd" id="2_umm0w"]
+[ext_resource type="SpriteFrames" uid="uid://bpe1ggjmrve8e" path="res://Characters/Main/Bf/BOYFRIEND.res" id="3_mfhvs"]
+[ext_resource type="SpriteFrames" uid="uid://c80b7bp38qg1k" path="res://Characters/Main/Dad/DADDY_DEAREST.res" id="5_7vxjk"]
+[ext_resource type="Script" uid="uid://b1gp6n0pxtkjl" path="res://Resources/Editor-Engine/scripts/conductor.gd" id="6_4tnjy"]
+[ext_resource type="SpriteFrames" uid="uid://ddkywxvoiwntk" path="res://Characters/Main/Gf/GF.res" id="6_qybw7"]
+[ext_resource type="Script" uid="uid://s1twc46ikwst" path="res://Unused/Removed/GamePlayEninge/chart_reader.gd" id="9_qybw7"]
+[ext_resource type="Shader" uid="uid://bafygrbqf4lhw" path="res://Resources/shaders/color replace.gdshader" id="10_ampbq"]
+[ext_resource type="Texture2D" uid="uid://bjae1teq4o1k3" path="res://icon.svg" id="10_htdah"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ir2h"]
+shader = ExtResource("10_ampbq")
+shader_parameter/show_stripes = false
+shader_parameter/input_color1 = Color(0, 0, 0, 1)
+shader_parameter/output_color1 = Color(0, 0, 0, 1)
+shader_parameter/input_color2 = Color(0, 0, 0, 1)
+shader_parameter/output_color2 = Color(0, 0, 0, 1)
+shader_parameter/input_color3 = Color(0, 0, 0, 1)
+shader_parameter/output_color3 = Color(0, 0, 0, 1)
+shader_parameter/input_color4 = Color(0, 0, 0, 1)
+shader_parameter/output_color4 = Color(0, 0, 0, 1)
+shader_parameter/input_color5 = Color(0, 0, 0, 1)
+shader_parameter/output_color5 = Color(0, 0, 0, 1)
+shader_parameter/input_color6 = Color(0, 0, 0, 1)
+shader_parameter/output_color6 = Color(0, 0, 0, 1)
+shader_parameter/input_color7 = Color(0, 0, 0, 1)
+shader_parameter/output_color7 = Color(0, 0, 0, 1)
+shader_parameter/input_color8 = Color(0, 0, 0, 1)
+shader_parameter/output_color8 = Color(0, 0, 0, 1)
+
+[node name="Play" type="Node2D"]
+script = ExtResource("1_548fn")
+chart = "res://Songs/blurt/normal.tres"
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+script = ExtResource("2_umm0w")
+
+[node name="Conductor" type="Node" parent="."]
+script = ExtResource("6_4tnjy")
+stream_player = NodePath("../Inst")
+metadata/_custom_type_script = "uid://b1gp6n0pxtkjl"
+
+[node name="Inst" type="AudioStreamPlayer" parent="."]
+
+[node name="Voices" type="AudioStreamPlayer" parent="."]
+
+[node name="Chart Reader" type="Node" parent="."]
+script = ExtResource("9_qybw7")
+
+[node name="characters" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.56
+
+[node name="Back Characters" type="CanvasLayer" parent="characters"]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Gf" type="Node2D" parent="characters/Back Characters"]
+position = Vector2(0, -58.9474)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("2_eelbi")
+animations = ExtResource("6_qybw7")
+role = "gf"
+camera_position = Vector2(0, -72.865)
+metadata/_custom_type_script = "uid://cqkanqr1o8qpk"
+
+[node name="Main" type="CanvasLayer" parent="characters"]
+layer = 3
+follow_viewport_enabled = true
+follow_viewport_scale = 1.05
+
+[node name="BF" type="Node2D" parent="characters/Main"]
+position = Vector2(417, 144)
+script = ExtResource("2_eelbi")
+animations = ExtResource("3_mfhvs")
+camera_position = Vector2(-120, -88.9)
+metadata/_custom_type_script = "uid://cqkanqr1o8qpk"
+
+[node name="Dad" type="Node2D" parent="characters/Main"]
+position = Vector2(-373, -60)
+script = ExtResource("2_eelbi")
+animations = ExtResource("5_7vxjk")
+role = "dad"
+camera_position = Vector2(200, -73)
+metadata/_custom_type_script = "uid://cqkanqr1o8qpk"
+
+[node name="ui" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="player" type="Node2D" parent="ui"]
+position = Vector2(740, 87)
+scale = Vector2(0.82, 0.82)
+
+[node name="left" type="Sprite2D" parent="ui/player"]
+material = SubResource("ShaderMaterial_4ir2h")
+texture = ExtResource("10_htdah")
+region_rect = Rect2(0, 0, 59, 68.5)
+
+[node name="up" type="Sprite2D" parent="ui/player"]
+position = Vector2(136, 0)
+texture = ExtResource("10_htdah")
+
+[node name="down" type="Sprite2D" parent="ui/player"]
+position = Vector2(279, 0)
+texture = ExtResource("10_htdah")
+
+[node name="right" type="Sprite2D" parent="ui/player"]
+position = Vector2(419, 0)
+texture = ExtResource("10_htdah")
+
+[connection signal="new_beat" from="Conductor" to="." method="_on_conductor_new_beat"]

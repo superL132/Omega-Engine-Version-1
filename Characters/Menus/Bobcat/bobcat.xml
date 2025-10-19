@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bobcat.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="catbob0000" x="448" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0001" x="0" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0002" x="448" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0003" x="1344" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0004" x="896" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0005" x="672" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0006" x="1568" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0007" x="896" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0008" x="448" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0009" x="1344" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0010" x="1568" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0011" x="1120" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0012" x="1120" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0013" x="1344" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0014" x="1120" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0015" x="1120" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0016" x="448" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0017" x="672" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0018" x="224" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0019" x="448" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0020" x="0" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0021" x="896" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0022" x="1120" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0023" x="672" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0024" x="1120" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0025" x="224" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0026" x="224" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0027" x="224" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0028" x="1344" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0029" x="1120" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0030" x="672" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0031" x="1344" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0032" x="0" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0033" x="448" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0034" x="224" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0035" x="1344" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0036" x="0" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0037" x="896" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0038" x="1344" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0039" x="0" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0040" x="0" y="1074" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0041" x="0" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0042" x="672" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0043" x="672" y="0" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0044" x="224" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0045" x="1568" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0046" x="896" y="179" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0047" x="672" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0048" x="1120" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0049" x="0" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0050" x="672" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0051" x="448" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0052" x="224" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0053" x="896" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0054" x="448" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0055" x="1344" y="537" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0056" x="896" y="716" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0057" x="1120" y="358" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0058" x="224" y="1253" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+	<SubTexture name="catbob0059" x="896" y="895" width="224" height="179" frameX="2" frameY="2" frameWidth="220" frameHeight="175"/>
+</TextureAtlas>

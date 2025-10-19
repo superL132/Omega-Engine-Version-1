@@ -1,0 +1,902 @@
+[gd_scene load_steps=34 format=3 uid="uid://bo1fla5ks0sfk"]
+
+[ext_resource type="Script" uid="uid://cslh3fvgvk0x5" path="res://Menus/Editors/Charter(new)/chart.gd" id="1_np4s3"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="1_xejmg"]
+[ext_resource type="Texture2D" uid="uid://jfbyo0mjnrg" path="res://Resources/Editor-Engine/References/Chart/Screenshot (837).png" id="3_83prc"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="3_qtehi"]
+[ext_resource type="Texture2D" uid="uid://c658xthgnbbhk" path="res://Resources/Editor-Engine/Textures/checkbox-true.png" id="4_np4s3"]
+[ext_resource type="Texture2D" uid="uid://bedgpkagi22m8" path="res://Resources/Editor-Engine/Textures/checkbox-false.png" id="5_t275t"]
+[ext_resource type="Texture2D" uid="uid://c08v7yyilt5gd" path="res://Resources/Editor-Engine/Textures/button+.png" id="7_pvfgq"]
+[ext_resource type="Texture2D" uid="uid://dewu3163nuo1v" path="res://Resources/Editor-Engine/Textures/button-.png" id="8_ywlsl"]
+[ext_resource type="Texture2D" uid="uid://dq4lfecorqss3" path="res://Resources/Texture/Menus/Charter/Ui/Notifications/saving.svg" id="9_ywlsl"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="10_83prc"]
+[ext_resource type="Script" uid="uid://bic77tk4vcp6h" path="res://Menus/Editors/Charter(new)/grid.gd" id="10_jg54m"]
+[ext_resource type="Texture2D" uid="uid://dw2rphqptt0cs" path="res://Resources/Texture/Menus/Charter/square.svg" id="11_jg54m"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="11_q6bm6"]
+[ext_resource type="Script" uid="uid://dgalfrug1rth7" path="res://Menus/Editors/Charter(new)/temp.gd" id="12_2bqjo"]
+[ext_resource type="AudioStream" uid="uid://75o37attgbc6" path="res://Resources/Sounds/SFX/Menu/confirmMenu.ogg" id="12_3q3dx"]
+[ext_resource type="PackedScene" uid="uid://bgy4qrt08yaij" path="res://Resources/Scenes/Audio Visualizer/Audio Spectrum.tscn" id="13_3k30s"]
+[ext_resource type="Script" uid="uid://b1gp6n0pxtkjl" path="res://Resources/Editor-Engine/scripts/conductor.gd" id="16_jt5ho"]
+[ext_resource type="AudioStream" uid="uid://bk4lwwtpv0km" path="res://Resources/Sounds/SFX/Editors/Metronome_Tick.ogg" id="17_nmnpo"]
+[ext_resource type="AudioStream" uid="uid://c3v4paym720qk" path="res://Resources/Sounds/SFX/Editors/Chart/click-151673.mp3" id="18_8si7p"]
+[ext_resource type="AudioStream" uid="uid://cu5v47v4ukphd" path="res://Resources/Music/Menu/Artistic_Expression (1).mp3" id="19_s08rw"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2bqjo"]
+color = Color(1, 1, 1, 1)
+thickness = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xejmg"]
+bg_color = Color(0.54902, 0.54902, 0.54902, 1)
+border_width_left = 2
+border_width_top = 2
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
+[sub_resource type="Theme" id="Theme_pvfgq"]
+Label/fonts/font = ExtResource("3_qtehi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_np4s3"]
+font = ExtResource("3_qtehi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ywlsl"]
+font = ExtResource("3_qtehi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_83prc"]
+font = ExtResource("3_qtehi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_pvfgq"]
+font = ExtResource("3_qtehi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_q6bm6"]
+font = ExtResource("3_qtehi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5bje"]
+font = ExtResource("3_qtehi")
+
+[sub_resource type="Animation" id="Animation_d5bje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("notification:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_83prc"]
+resource_name = "notif"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("notification:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6bm6"]
+_data = {
+&"RESET": SubResource("Animation_d5bje"),
+&"notif": SubResource("Animation_83prc")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_3q3dx"]
+font = ExtResource("3_qtehi")
+
+[node name="Chart" type="Node2D"]
+script = ExtResource("1_np4s3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="bg" type="CanvasLayer" parent="."]
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="bg"]
+modulate = Color(0.152941, 0.152941, 0.152941, 1)
+texture = ExtResource("1_xejmg")
+metadata/_edit_lock_ = true
+
+[node name="Chart" type="CanvasLayer" parent="."]
+
+[node name="Grid" type="Node2D" parent="Chart"]
+position = Vector2(263, 324)
+script = ExtResource("10_jg54m")
+
+[node name="Temp" type="TextureRect" parent="Chart/Grid"]
+offset_right = 45.0
+offset_bottom = 45.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("11_jg54m")
+stretch_mode = 1
+script = ExtResource("12_2bqjo")
+
+[node name="HSeparator" type="HSeparator" parent="Chart"]
+offset_left = 263.0
+offset_top = 324.0
+offset_right = 566.75
+offset_bottom = 328.0
+theme_override_styles/separator = SubResource("StyleBoxLine_2bqjo")
+
+[node name="Control Panel" type="CanvasLayer" parent="."]
+
+[node name="ChartReferencer1" type="Sprite2D" parent="Control Panel"]
+position = Vector2(576, 1141)
+scale = Vector2(0.905, 0.905)
+texture = ExtResource("3_83prc")
+
+[node name="TabBar" type="TabBar" parent="Control Panel"]
+z_index = 6
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 596.0
+offset_top = 18.0
+offset_right = -208.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_qtehi")
+current_tab = 0
+tab_count = 5
+tab_0/title = "Chart"
+tab_1/title = "Events"
+tab_2/title = "Note"
+tab_3/title = "Section"
+tab_4/title = "Song"
+
+[node name="Panel" type="Panel" parent="Control Panel"]
+offset_left = 596.0
+offset_top = 50.0
+offset_right = 944.0
+offset_bottom = 456.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xejmg")
+
+[node name="sections" type="Control" parent="Control Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="chart" type="Control" parent="Control Panel/Panel/sections"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pvfgq")
+
+[node name="metronome" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Metronome Enabled"
+autowrap_mode = 3
+
+[node name="waveform1" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 93.0
+offset_right = 128.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Waveform for Instrumental"
+autowrap_mode = 3
+
+[node name="waveform2" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 129.0
+offset_right = 150.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Ignore Progress Warnings"
+autowrap_mode = 3
+
+[node name="waveform3" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 93.0
+offset_right = 293.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Waveform for Voices"
+autowrap_mode = 3
+
+[node name="vortex" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 187.0
+offset_right = 136.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Vortex Editor (BETA)"
+autowrap_mode = 3
+
+[node name="disable autoscroll" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 4.0
+offset_right = 348.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Disable Autoscroll (Not Recommended)"
+autowrap_mode = 2
+
+[node name="editor1" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 317.0
+offset_right = 163.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Mute Instrumental (in editor)"
+autowrap_mode = 3
+
+[node name="editor2" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 317.0
+offset_right = 263.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Mute Voices (in editor)"
+autowrap_mode = 3
+
+[node name="editor3" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 351.0
+offset_right = 156.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Play Sound (Boyfriend notes)"
+autowrap_mode = 3
+
+[node name="editor4" type="CheckBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 351.0
+offset_right = 291.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Play Sound (Opponent notes)"
+autowrap_mode = 3
+
+[node name="BPM" type="SpinBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 61.0
+offset_right = 108.0
+offset_bottom = 92.0
+scale = Vector2(0.7, 0.7)
+theme_override_icons/up_disabled = ExtResource("7_pvfgq")
+theme_override_icons/down = ExtResource("8_ywlsl")
+theme_override_icons/down_disabled = ExtResource("8_ywlsl")
+theme_override_icons/up = ExtResource("7_pvfgq")
+max_value = 0.0
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/chart/BPM"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "BPM:"
+label_settings = SubResource("LabelSettings_np4s3")
+
+[node name="Offset" type="SpinBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 61.0
+offset_right = 250.0
+offset_bottom = 92.0
+scale = Vector2(0.7, 0.7)
+theme_override_icons/up_disabled = ExtResource("7_pvfgq")
+theme_override_icons/down = ExtResource("8_ywlsl")
+theme_override_icons/down_disabled = ExtResource("8_ywlsl")
+theme_override_icons/up = ExtResource("7_pvfgq")
+max_value = 0.0
+allow_greater = true
+update_on_text_changed = true
+suffix = "ms"
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/chart/Offset"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "Offset (ms):"
+label_settings = SubResource("LabelSettings_np4s3")
+
+[node name="InstVol" type="SpinBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 285.0
+offset_right = 108.0
+offset_bottom = 316.0
+scale = Vector2(0.7, 0.7)
+theme_override_icons/up_disabled = ExtResource("7_pvfgq")
+theme_override_icons/down = ExtResource("8_ywlsl")
+theme_override_icons/down_disabled = ExtResource("8_ywlsl")
+theme_override_icons/up = ExtResource("7_pvfgq")
+max_value = 0.0
+step = 0.1
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/chart/InstVol"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "Inst Volume"
+label_settings = SubResource("LabelSettings_np4s3")
+
+[node name="VoicesVol" type="SpinBox" parent="Control Panel/Panel/sections/chart"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 285.0
+offset_right = 250.0
+offset_bottom = 316.0
+scale = Vector2(0.7, 0.7)
+theme_override_icons/up_disabled = ExtResource("7_pvfgq")
+theme_override_icons/down = ExtResource("8_ywlsl")
+theme_override_icons/down_disabled = ExtResource("8_ywlsl")
+theme_override_icons/up = ExtResource("7_pvfgq")
+max_value = 0.0
+step = 0.1
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/chart/VoicesVol"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "Inst Volume"
+label_settings = SubResource("LabelSettings_np4s3")
+
+[node name="Events" type="Control" parent="Control Panel/Panel/sections"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="value1" type="LineEdit" parent="Control Panel/Panel/sections/Events"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 155.0
+offset_right = 183.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+placeholder_text = "value1"
+caret_blink = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Events/value1"]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 66.0
+offset_bottom = 5.0
+scale = Vector2(0.7, 0.7)
+text = "Value1:"
+label_settings = SubResource("LabelSettings_ywlsl")
+
+[node name="value2" type="LineEdit" parent="Control Panel/Panel/sections/Events"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 214.0
+offset_right = 183.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+placeholder_text = "value2"
+caret_blink = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Events/value2"]
+physics_interpolation_mode = 1
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = -17.0
+offset_right = 66.0
+offset_bottom = -2.0
+scale = Vector2(0.7, 0.7)
+text = "Value2:"
+label_settings = SubResource("LabelSettings_83prc")
+
+[node name="event list" type="OptionButton" parent="Control Panel/Panel/sections/Events"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 54.0
+offset_right = 223.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+text_overrun_behavior = 4
+clip_text = true
+selected = 0
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Events/event list"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 57.0
+offset_bottom = 2.0
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Event:"
+label_settings = SubResource("LabelSettings_pvfgq")
+
+[node name="description" type="RichTextLabel" parent="Control Panel/Panel/sections/Events"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 261.0
+offset_right = 314.0
+offset_bottom = 393.0
+focus_mode = 2
+bbcode_enabled = true
+text = "desc"
+selection_enabled = true
+
+[node name="Song" type="Control" parent="Control Panel/Panel/sections"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="song" type="LineEdit" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 134.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+placeholder_text = "Song Name"
+caret_blink = true
+
+[node name="voices" type="CheckBox" parent="Control Panel/Panel/sections/Song/song"]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 125.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+button_pressed = true
+text = "Has Voice Track"
+autowrap_mode = 3
+
+[node name="save" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 9.0
+offset_right = 257.0
+offset_bottom = 39.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Save"
+
+[node name="saveEvents" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 48.0
+offset_right = 257.0
+offset_bottom = 78.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Save Events"
+
+[node name="reloadAudio" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 9.0
+offset_right = 368.0
+offset_bottom = 38.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Reload Audio"
+
+[node name="reloadJson" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 48.0
+offset_right = 368.0
+offset_bottom = 78.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Reload JSON"
+
+[node name="exit" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 379.0
+offset_right = 368.0
+offset_bottom = 409.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Exit Charter"
+
+[node name="loadAutosave" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 89.0
+offset_right = 370.0
+offset_bottom = 119.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Load Autosave"
+
+[node name="loadEvents" type="Button" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 126.0
+offset_right = 370.0
+offset_bottom = 156.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_qtehi")
+text = "Load Events"
+
+[node name="BPM" type="SpinBox" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 92.0
+offset_right = 108.0
+offset_bottom = 123.0
+scale = Vector2(0.7, 0.7)
+theme_override_icons/up_disabled = ExtResource("7_pvfgq")
+theme_override_icons/down = ExtResource("8_ywlsl")
+theme_override_icons/down_disabled = ExtResource("8_ywlsl")
+theme_override_icons/up = ExtResource("7_pvfgq")
+max_value = 0.0
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/BPM"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "Song BPM:"
+label_settings = SubResource("LabelSettings_np4s3")
+
+[node name="speed" type="SpinBox" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 132.0
+offset_right = 108.0
+offset_bottom = 163.0
+scale = Vector2(0.7, 0.7)
+theme_override_icons/up_disabled = ExtResource("7_pvfgq")
+theme_override_icons/down = ExtResource("8_ywlsl")
+theme_override_icons/down_disabled = ExtResource("8_ywlsl")
+theme_override_icons/up = ExtResource("7_pvfgq")
+max_value = 0.0
+step = 0.1
+allow_greater = true
+update_on_text_changed = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/speed"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 8.0
+text = "Song Speed:"
+label_settings = SubResource("LabelSettings_np4s3")
+
+[node name="Bf" type="OptionButton" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 187.0
+offset_right = 196.0
+offset_bottom = 220.0
+scale = Vector2(0.7, 0.7)
+selected = 0
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/Bf"]
+layout_mode = 0
+offset_top = -17.1429
+offset_right = 94.0
+offset_bottom = 5.85715
+text = "Boyfriend:"
+label_settings = SubResource("LabelSettings_q6bm6")
+
+[node name="stage" type="OptionButton" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 187.0
+offset_right = 340.0
+offset_bottom = 220.0
+scale = Vector2(0.7, 0.7)
+selected = 0
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/stage"]
+layout_mode = 0
+offset_top = -17.1429
+offset_right = 94.0
+offset_bottom = 5.85715
+text = "Stage:"
+label_settings = SubResource("LabelSettings_q6bm6")
+
+[node name="Gf" type="OptionButton" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 232.0
+offset_right = 196.0
+offset_bottom = 265.0
+scale = Vector2(0.7, 0.7)
+selected = 0
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/Gf"]
+layout_mode = 0
+offset_top = -17.1429
+offset_right = 94.0
+offset_bottom = 5.85715
+text = "Girlfriend:
+"
+label_settings = SubResource("LabelSettings_q6bm6")
+
+[node name="Op" type="OptionButton" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 278.0
+offset_right = 196.0
+offset_bottom = 311.0
+scale = Vector2(0.7, 0.7)
+selected = 0
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/Op"]
+layout_mode = 0
+offset_top = -17.1429
+offset_right = 94.0
+offset_bottom = 5.85715
+text = "Opponent:"
+label_settings = SubResource("LabelSettings_q6bm6")
+
+[node name="LineEdit" type="LineEdit" parent="Control Panel/Panel/sections/Song"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 345.0
+offset_right = 197.0
+offset_bottom = 376.0
+scale = Vector2(0.7, 0.7)
+placeholder_text = "Note Texture Name"
+caret_blink = true
+
+[node name="Label" type="Label" parent="Control Panel/Panel/sections/Song/LineEdit"]
+layout_mode = 0
+offset_top = -17.1429
+offset_right = 94.0
+offset_bottom = 5.85715
+text = "Note Texture:"
+label_settings = SubResource("LabelSettings_q6bm6")
+
+[node name="Charter Music" type="CheckBox" parent="Control Panel"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Turns on music for you to jam to (This feature is broken)"
+tooltip_auto_translate_mode = 1
+theme_override_fonts/font = ExtResource("3_qtehi")
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("4_np4s3")
+theme_override_icons/unchecked = ExtResource("5_t275t")
+text = "Chart Music (broken)"
+
+[node name="notification" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Control" parent="notification"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="notification" type="TextureRect" parent="notification/Node2D"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_right = 164.0
+grow_vertical = 0
+texture = ExtResource("9_ywlsl")
+
+[node name="Label" type="Label" parent="notification/Node2D/notification"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SAVING..."
+label_settings = SubResource("LabelSettings_d5bje")
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="notification/Node2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_q6bm6")
+}
+
+[node name="other labels" type="CanvasLayer" parent="."]
+
+[node name="current time" type="Label" parent="other labels"]
+offset_left = 969.0
+offset_top = 53.0
+offset_right = 1063.0
+offset_bottom = 76.0
+scale = Vector2(1.19338, 1.19338)
+text = "0 / 0"
+label_settings = SubResource("LabelSettings_3q3dx")
+
+[node name="Section" type="Label" parent="other labels"]
+offset_left = 969.0
+offset_top = 72.0
+offset_right = 1063.0
+offset_bottom = 95.0
+scale = Vector2(1.19338, 1.19338)
+text = "Section: 0"
+label_settings = SubResource("LabelSettings_3q3dx")
+
+[node name="Beat" type="Label" parent="other labels"]
+offset_left = 969.0
+offset_top = 119.0
+offset_right = 1063.0
+offset_bottom = 142.0
+scale = Vector2(1.19338, 1.19338)
+text = "Beat: 0"
+label_settings = SubResource("LabelSettings_3q3dx")
+
+[node name="Step" type="Label" parent="other labels"]
+offset_left = 969.0
+offset_top = 171.0
+offset_right = 1063.0
+offset_bottom = 194.0
+scale = Vector2(1.19338, 1.19338)
+text = "Step: 0"
+label_settings = SubResource("LabelSettings_3q3dx")
+
+[node name="BeatSnap" type="Label" parent="other labels"]
+offset_left = 969.0
+offset_top = 220.0
+offset_right = 1063.0
+offset_bottom = 243.0
+scale = Vector2(1.19338, 1.19338)
+text = "Beat Snap: 16th"
+label_settings = SubResource("LabelSettings_3q3dx")
+
+[node name="other_ui" type="CanvasLayer" parent="."]
+
+[node name="AudioSpectrum" parent="other_ui" instance=ExtResource("13_3k30s")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 578.0
+offset_right = 578.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(0.29, 1)
+intensity = 10
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_83prc")
+max_polyphony = 2
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_q6bm6")
+
+[node name="confirmMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_3q3dx")
+
+[node name="Inst" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Voices" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Conductor" type="Node" parent="."]
+script = ExtResource("16_jt5ho")
+stream_player = NodePath("../Inst")
+tempo = 135.0
+metadata/_custom_type_script = "uid://b1gp6n0pxtkjl"
+
+[node name="MetronomeTick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_nmnpo")
+
+[node name="exitSceneTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_8si7p")
+
+[node name="Autistic Expressive" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_s08rw")
+bus = &"Music"
+
+[connection signal="mouse_entered" from="Chart/Grid/Temp" to="Chart/Grid/Temp" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Chart/Grid/Temp" to="Chart/Grid/Temp" method="_on_mouse_exited"]
+[connection signal="tab_changed" from="Control Panel/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="tab_hovered" from="Control Panel/TabBar" to="." method="_on_tab_bar_tab_hovered"]
+[connection signal="tab_selected" from="Control Panel/TabBar" to="." method="_on_tab_bar_tab_selected"]
+[connection signal="toggled" from="Control Panel/Panel/sections/Song/song/voices" to="." method="_on_voices_toggled"]
+[connection signal="pressed" from="Control Panel/Panel/sections/Song/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Control Panel/Panel/sections/Song/reloadJson" to="." method="_on_reload_json_pressed"]
+[connection signal="pressed" from="Control Panel/Panel/sections/Song/exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="Control Panel/Panel/sections/Song/BPM" to="." method="_on_bpm_value_changed"]
+[connection signal="value_changed" from="Control Panel/Panel/sections/Song/speed" to="." method="_on_speed_value_changed"]
+[connection signal="item_selected" from="Control Panel/Panel/sections/Song/Bf" to="." method="_on_bf_item_selected"]
+[connection signal="item_selected" from="Control Panel/Panel/sections/Song/stage" to="." method="_on_bf_item_selected"]
+[connection signal="item_selected" from="Control Panel/Panel/sections/Song/Gf" to="." method="_on_gf_item_selected"]
+[connection signal="item_selected" from="Control Panel/Panel/sections/Song/Op" to="." method="_on_op_item_selected"]
+[connection signal="toggled" from="Control Panel/Charter Music" to="." method="_on_charter_music_toggled"]
+[connection signal="new_beat" from="Conductor" to="." method="_on_conductor_new_beat"]
+[connection signal="timeout" from="exitSceneTimer" to="." method="_on_exit_scene_timer_timeout"]

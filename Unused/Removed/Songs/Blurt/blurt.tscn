@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://djc7inxgni5wt"]
+
+[ext_resource type="Script" uid="uid://rmel177mgyi5" path="res://Unused/Removed/Songs/Blurt/blurt.gd" id="1_sxp0c"]
+[ext_resource type="PackedScene" path="res://Characters/place holders/Bf/bf.tscn" id="2_ip4wu"]
+[ext_resource type="PackedScene" path="res://Characters/place holders/Dad/dad.tscn" id="3_s5css"]
+[ext_resource type="PackedScene" uid="uid://cna6mdwkatsu0" path="res://Stages/stage/stage.tscn" id="4_nhuvu"]
+[ext_resource type="AudioStream" uid="uid://bk08nexvs17gn" path="res://Resources/Music/Songs/blurt/Inst.ogg" id="5_rmmyr"]
+[ext_resource type="AudioStream" uid="uid://ctugbniijghjp" path="res://Resources/Music/Songs/blurt/Voices.ogg" id="6_gwgev"]
+[ext_resource type="AudioStream" uid="uid://bk4lwwtpv0km" path="res://Resources/Sounds/SFX/Editors/Metronome_Tick.ogg" id="6_lldd1"]
+
+[node name="blurt" type="Node2D" groups=["Song"]]
+script = ExtResource("1_sxp0c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(0.8, 0.8)
+
+[node name="BF" parent="." instance=ExtResource("2_ip4wu")]
+position = Vector2(411, 141)
+
+[node name="Dad" parent="." instance=ExtResource("3_s5css")]
+position = Vector2(-282, -54)
+
+[node name="Stage" parent="." instance=ExtResource("4_nhuvu")]
+
+[node name="Songs" type="Node" parent="."]
+
+[node name="Inst" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource("5_rmmyr")
+autoplay = true
+
+[node name="Voices" type="AudioStreamPlayer" parent="Songs"]
+stream = ExtResource("6_gwgev")
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lldd1")

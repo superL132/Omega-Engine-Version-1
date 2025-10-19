@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgy4qrt08yaij"]
+
+[ext_resource type="Script" uid="uid://ce5f70v628v63" path="res://Resources/Scenes/Audio Visualizer/audio_spectrum.gd" id="1_8bmxd"]
+
+[node name="AudioSpectrum" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8bmxd")
+
+[node name="Base" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.45, -0.18)
+
+[node name="right" type="Control" parent="Base"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="top" type="Control" parent="Base/right"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Base/right/top"]
+visible = false
+layout_mode = 0
+offset_left = 480.0
+offset_right = 511.665
+
+[node name="ColorRect2" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 60.3448
+offset_right = 92.0098
+
+[node name="ColorRect3" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 109.345
+offset_right = 141.01
+
+[node name="ColorRect4" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 159.345
+offset_right = 191.01
+
+[node name="ColorRect5" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 207.345
+offset_right = 239.01
+
+[node name="ColorRect6" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 257.345
+offset_right = 289.01
+
+[node name="ColorRect7" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 306.345
+offset_right = 338.01
+
+[node name="ColorRect8" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 356.345
+offset_right = 388.01
+
+[node name="ColorRect9" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 405.345
+offset_right = 437.01
+
+[node name="ColorRect10" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 455.345
+offset_right = 487.01
+
+[node name="ColorRect11" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 504.345
+offset_right = 536.01
+
+[node name="ColorRect12" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 554.345
+offset_right = 586.01
+
+[node name="ColorRect13" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 602.345
+offset_right = 634.01
+
+[node name="ColorRect14" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 652.345
+offset_right = 684.01
+
+[node name="ColorRect15" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 701.345
+offset_right = 733.01
+
+[node name="ColorRect16" type="ColorRect" parent="Base/right/top"]
+layout_mode = 0
+offset_left = 751.345
+offset_right = 783.01

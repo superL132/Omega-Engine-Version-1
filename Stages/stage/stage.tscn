@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cna6mdwkatsu0"]
+
+[ext_resource type="Texture2D" uid="uid://u7kse4qebnot" path="res://Resources/Texture/Stages/Stage/stageback.png" id="1_lfi0j"]
+[ext_resource type="Script" uid="uid://bw3bnvc8yrs1k" path="res://Stages/stage/stage.gd" id="1_wbap4"]
+[ext_resource type="Texture2D" uid="uid://8m52ydggb8si" path="res://Resources/Texture/Stages/Stage/stagefront.png" id="2_2kjft"]
+[ext_resource type="Texture2D" uid="uid://8ywk20qow423" path="res://Resources/Texture/Stages/Stage/stagecurtains.png" id="3_0t78k"]
+[ext_resource type="Texture2D" uid="uid://d3hocvqd1d7e1" path="res://Resources/Texture/Stages/Stage/stage_light.png" id="4_sjtqu"]
+
+[node name="Stage" type="Node2D" groups=["Stage"]]
+script = ExtResource("1_wbap4")
+
+[node name="Stagefront" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 431.205)
+texture = ExtResource("2_2kjft")
+
+[node name="front" type="CanvasLayer" parent="."]
+layer = 5
+follow_viewport_enabled = true
+follow_viewport_scale = 1.2
+
+[node name="Node2D" type="Node2D" parent="front"]
+scale = Vector2(0.9, 0.9)
+
+[node name="Stagecurtains" type="Sprite2D" parent="front/Node2D"]
+z_index = 3
+texture = ExtResource("3_0t78k")
+
+[node name="StageLight" type="Sprite2D" parent="front/Node2D"]
+z_index = 2
+position = Vector2(-705, -371)
+texture = ExtResource("4_sjtqu")
+
+[node name="StageLight2" type="Sprite2D" parent="front/Node2D"]
+z_index = 2
+position = Vector2(705, -371)
+texture = ExtResource("4_sjtqu")
+flip_h = true
+
+[node name="back" type="CanvasLayer" parent="."]
+layer = -5
+follow_viewport_enabled = true
+follow_viewport_scale = 0.87
+
+[node name="Stageback" type="Sprite2D" parent="back"]
+texture = ExtResource("1_lfi0j")

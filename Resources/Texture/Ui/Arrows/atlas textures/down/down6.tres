@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://52bgrw4usita"]
+
+[ext_resource type="Texture2D" uid="uid://72rpfyhqoy5x" path="res://Resources/Texture/Ui/Arrows/down_strum.png" id="1_rfelc"]
+
+[resource]
+atlas = ExtResource("1_rfelc")
+region = Rect2(1296, 47, 157, 155)

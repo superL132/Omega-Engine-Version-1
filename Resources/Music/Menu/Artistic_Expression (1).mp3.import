@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu5v47v4ukphd"
+path="res://.godot/imported/Artistic_Expression (1).mp3-5d109bf37de57be19ae5a02538c54693.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Menu/Artistic_Expression (1).mp3"
+dest_files=["res://.godot/imported/Artistic_Expression (1).mp3-5d109bf37de57be19ae5a02538c54693.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

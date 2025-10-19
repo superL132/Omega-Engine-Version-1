@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crmlewpj71oyp"
+path="res://.godot/imported/intro3.ogg-4d29e1b8b4e706da9c072f15b304295d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Resources/Sounds/SFX/Gameplay/Song Intros/Norm/intro3.ogg"
+dest_files=["res://.godot/imported/intro3.ogg-4d29e1b8b4e706da9c072f15b304295d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

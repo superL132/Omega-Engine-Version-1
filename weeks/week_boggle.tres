@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="weekData" load_steps=3 format=3 uid="uid://btweae4qo48ow"]
+
+[ext_resource type="Script" uid="uid://drlb7gm6dyqmo" path="res://Resources/Editor-Engine/scripts/week_data.gd" id="1_x4xdi"]
+[ext_resource type="Texture2D" uid="uid://de5bg2a0a288e" path="res://Resources/Texture/Menus/Story Menu/art/the koen and aster mod official art by superL132.png" id="2_1s4il"]
+
+[resource]
+script = ExtResource("1_x4xdi")
+week_image = ExtResource("2_1s4il")
+week_desc = "[color=353E47]Koen[/color] and [color=B59B62]Aster[/color] are out on a walk (the picture might change)"
+tracks = Array[String](["Boggle", "Blurt"])
+dificulties = Array[String](["normal"])
+song_colors = Array[Color]([Color(0.207843, 0.243137, 0.278431, 1), Color(0.709804, 0.607843, 0.384314, 1)])
+metadata/_custom_type_script = "uid://drlb7gm6dyqmo"

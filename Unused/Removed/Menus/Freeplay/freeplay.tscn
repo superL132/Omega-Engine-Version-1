@@ -1,0 +1,437 @@
+[gd_scene load_steps=34 format=3 uid="uid://1nab2c0nk7dk"]
+
+[ext_resource type="Script" uid="uid://c5fpfp0u74qb7" path="res://Unused/Removed/Menus/Freeplay/freeplay.gd" id="1_o0h2k"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="2_bq02k"]
+[ext_resource type="AudioStream" uid="uid://bk4lwwtpv0km" path="res://Resources/Sounds/SFX/Editors/Metronome_Tick.ogg" id="2_nj0x1"]
+[ext_resource type="Texture2D" uid="uid://cxivn8oeyq7ap" path="res://Resources/Texture/Menus/freeplay/disk/vinyl1.png" id="3_qvi04"]
+[ext_resource type="Texture2D" uid="uid://bed7saxm03chp" path="res://icon.svg" id="3_r0xyl"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="4_3ty1i"]
+[ext_resource type="Texture2D" uid="uid://kprggbapiwlr" path="res://Resources/Texture/Menus/freeplay/disk/vinyl2.png" id="4_q0052"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="5_xa83q"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="6_dsbh6"]
+[ext_resource type="StyleBox" uid="uid://ctq0r72khlxi5" path="res://Unused/Removed/Menus/Freeplay/other/bg_color_styleBox.tres" id="8_n2qv0"]
+[ext_resource type="Texture2D" uid="uid://c4ai1eurdb0rf" path="res://Resources/Texture/icons/credits/missing_icon.png" id="8_vpo4l"]
+[ext_resource type="Script" uid="uid://c08xca6dtty4d" path="res://Unused/Removed/Menus/Freeplay/song_list.gd" id="9_tyx7k"]
+[ext_resource type="FontFile" uid="uid://b2wxr4opq5ma0" path="res://Resources/Fonts/FridayNightFunkin-Regular.ttf" id="10_tyx7k"]
+
+[sub_resource type="Animation" id="Animation_k5kra"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_gj3fw"]
+resource_name = "fade in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rdk1n"]
+resource_name = "pitch out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.01]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsyid"]
+_data = {
+&"RESET": SubResource("Animation_k5kra"),
+&"fade in": SubResource("Animation_gj3fw"),
+&"pitch out": SubResource("Animation_rdk1n")
+}
+
+[sub_resource type="Animation" id="Animation_axy06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u3h5b"]
+resource_name = "selected"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.00056, 1.00056), Vector2(1.00132, 1.00132), Vector2(1.0022, 1.0022), Vector2(1.00323, 1.00323), Vector2(1.00444, 1.00444), Vector2(1.00584, 1.00584), Vector2(1.00748, 1.00748), Vector2(1.00939, 1.00939), Vector2(1.01163, 1.01163), Vector2(1.01423, 1.01423), Vector2(1.01726, 1.01726), Vector2(1.0208, 1.0208), Vector2(1.02493, 1.02493), Vector2(1.02975, 1.02975), Vector2(1.03537, 1.03537), Vector2(1.04193, 1.04193), Vector2(1.04958, 1.04958), Vector2(1.0585, 1.0585), Vector2(1.06891, 1.06891), Vector2(1.08105, 1.08105), Vector2(1.09521, 1.09521), Vector2(1.11173, 1.11173), Vector2(1.13101, 1.13101), Vector2(1.15349, 1.15349), Vector2(1.17972, 1.17972), Vector2(1.21031, 1.21031), Vector2(1.246, 1.246), Vector2(1.28763, 1.28763), Vector2(1.3362, 1.3362), Vector2(1.39285, 1.39285), Vector2(1.45894, 1.45894), Vector2(1.53603, 1.53603), Vector2(1.62596, 1.62596), Vector2(1.73087, 1.73087), Vector2(1.85324, 1.85324), Vector2(1.996, 1.996), Vector2(2.16253, 2.16253), Vector2(2.35679, 2.35679), Vector2(2.5834, 2.5834), Vector2(2.84775, 2.84775), Vector2(3.15612, 3.15612), Vector2(3.51584, 3.51584), Vector2(3.93547, 3.93547), Vector2(4.42498, 4.42498), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tafq4"]
+_data = {
+&"RESET": SubResource("Animation_axy06"),
+&"selected": SubResource("Animation_u3h5b")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0xyn"]
+font = ExtResource("4_3ty1i")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xfq4p"]
+blend_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_6bt75"]
+size = Vector2(500, 15.485)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fxn7s"]
+size = Vector2(500, 66.79)
+
+[sub_resource type="Animation" id="Animation_sp035"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 53)]
+}
+
+[sub_resource type="Animation" id="Animation_cvgh4"]
+resource_name = "slide out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 53), Vector2(-140.895, 53)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ntyc7"]
+_data = {
+&"RESET": SubResource("Animation_sp035"),
+&"slide out": SubResource("Animation_cvgh4")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55mag"]
+bg_color = Color(0, 0, 0, 0.470588)
+
+[sub_resource type="Animation" id="Animation_14xos"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/fill:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_socg8"]
+resource_name = "test"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/fill:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4irt4"]
+_data = {
+&"RESET": SubResource("Animation_14xos"),
+&"test": SubResource("Animation_socg8")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_me6xw"]
+font = ExtResource("4_3ty1i")
+font_color = Color(0, 0, 0, 0.984314)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tximb"]
+font = ExtResource("10_tyx7k")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="freeplay" type="Node2D"]
+script = ExtResource("1_o0h2k")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nj0x1")
+
+[node name="music effects" type="AnimationPlayer" parent="music"]
+libraries = {
+&"": SubResource("AnimationLibrary_lsyid")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 5
+offset_left = -630.0
+offset_top = -383.0
+offset_right = 670.0
+offset_bottom = 423.0
+color = Color(0, 0, 0, 0)
+
+[node name="bg" type="Sprite2D" parent="Camera2D"]
+z_index = -5
+scale = Vector2(1.46849, 1.46849)
+texture = ExtResource("2_bq02k")
+
+[node name="anim" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_tafq4")
+}
+autoplay = "selected"
+
+[node name="album_cover" type="TextureRect" parent="Camera2D"]
+offset_left = 213.0
+offset_top = -42.0
+offset_right = 563.0
+offset_bottom = 308.0
+texture = ExtResource("3_r0xyl")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="Camera2D/album_cover"]
+clip_contents = true
+anchors_preset = 0
+offset_left = 6.0
+offset_top = -38.0
+offset_right = 345.0
+
+[node name="Label" type="Label" parent="Camera2D/album_cover/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Blurt by Mega Mango, Koen and Aster"
+label_settings = SubResource("LabelSettings_m0xyn")
+
+[node name="Timer" type="Timer" parent="Camera2D/album_cover/Control"]
+wait_time = 1.5
+
+[node name="vinyl" type="Control" parent="Camera2D/album_cover"]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 53.0
+offset_right = 273.0
+offset_bottom = 326.0
+
+[node name="vinyl base1" type="TextureRect" parent="Camera2D/album_cover/vinyl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qvi04")
+expand_mode = 2
+
+[node name="vinyl base2" type="TextureRect" parent="Camera2D/album_cover/vinyl"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q0052")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/album_cover/vinyl/vinyl base2"]
+self_modulate = Color(0.77, 0.77, 0.77, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(136.5, 136.5)
+texture = ExtResource("3_r0xyl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="shine" type="Node2D" parent="Camera2D/album_cover/vinyl/vinyl base2"]
+modulate = Color(1, 1, 1, 0.376471)
+material = SubResource("CanvasItemMaterial_xfq4p")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D/album_cover/vinyl/vinyl base2/shine"]
+use_parent_material = true
+position = Vector2(84, 102)
+rotation = -0.687036
+mesh = SubResource("QuadMesh_6bt75")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Camera2D/album_cover/vinyl/vinyl base2/shine"]
+use_parent_material = true
+position = Vector2(156, 159)
+rotation = -0.687036
+mesh = SubResource("QuadMesh_fxn7s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/album_cover/vinyl"]
+libraries = {
+&"": SubResource("AnimationLibrary_ntyc7")
+}
+
+[node name="vinyl slide" type="Timer" parent="Camera2D/album_cover/vinyl"]
+wait_time = 3.0
+one_shot = true
+
+[node name="album_cover_outline" type="TextureRect" parent="Camera2D/album_cover"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 342.0
+offset_bottom = 342.0
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("3_r0xyl")
+expand_mode = 2
+
+[node name="time" type="ProgressBar" parent="Camera2D/album_cover"]
+layout_mode = 0
+offset_top = 316.0
+offset_right = 350.0
+offset_bottom = 333.885
+theme_override_styles/background = SubResource("StyleBoxFlat_55mag")
+theme_override_styles/fill = ExtResource("8_n2qv0")
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/album_cover/time"]
+libraries = {
+&"": SubResource("AnimationLibrary_4irt4")
+}
+
+[node name="Label" type="Label" parent="Camera2D/album_cover/time"]
+layout_mode = 0
+offset_top = -25.0
+offset_right = 40.0
+offset_bottom = -2.0
+text = "0:00/1:69"
+label_settings = SubResource("LabelSettings_me6xw")
+
+[node name="song list" type="Node2D" parent="."]
+position = Vector2(-257.86, -40)
+script = ExtResource("9_tyx7k")
+
+[node name="Temp" type="Label" parent="song list"]
+offset_left = -198.0
+offset_top = -759.0
+offset_right = 540.0
+offset_bottom = -671.0
+text = "temp"
+label_settings = SubResource("LabelSettings_tximb")
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="song list/Temp"]
+z_index = 1
+position = Vector2(-57.225, 40)
+texture = ExtResource("8_vpo4l")
+
+[node name="changeSceneBackTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xa83q")
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dsbh6")
+max_polyphony = 2
+
+[connection signal="timeout" from="Camera2D/album_cover/Control/Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="Camera2D/album_cover/vinyl/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Camera2D/album_cover/vinyl/vinyl slide" to="." method="_on_vinyl_slide_timeout"]
+[connection signal="timeout" from="changeSceneBackTimer" to="." method="_on_change_scene_back_timer_timeout"]

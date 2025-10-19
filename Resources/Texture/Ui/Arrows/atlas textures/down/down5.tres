@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d0yuix0255rk8"]
+
+[ext_resource type="Texture2D" uid="uid://72rpfyhqoy5x" path="res://Resources/Texture/Ui/Arrows/down_strum.png" id="1_h2wgs"]
+
+[resource]
+atlas = ExtResource("1_h2wgs")
+region = Rect2(1055, 59, 142, 139)

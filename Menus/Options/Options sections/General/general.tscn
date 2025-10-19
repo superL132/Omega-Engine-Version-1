@@ -1,0 +1,125 @@
+[gd_scene load_steps=15 format=3 uid="uid://dx1pnvny2v8l5"]
+
+[ext_resource type="Script" uid="uid://bt7r8t1jhrc31" path="res://Menus/Options/Options sections/General/general.gd" id="1_0wlnl"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="1_ik5xy"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="3_8houu"]
+[ext_resource type="FontFile" uid="uid://2n3yaj3wiy1w" path="res://Resources/Fonts/fnf font outline.ttf" id="3_hvmok"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="4_cn651"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="4_qu0y8"]
+[ext_resource type="AudioStream" uid="uid://cxjyqjatexvgp" path="res://Resources/Music/Menu/freakyMenu.ogg" id="5_skv0c"]
+[ext_resource type="AudioStream" uid="uid://75o37attgbc6" path="res://Resources/Sounds/SFX/Menu/confirmMenu.ogg" id="6_hvmok"]
+[ext_resource type="FontFile" uid="uid://ck56vxwoqe7wy" path="res://Resources/Fonts/fnf font.ttf" id="7_8houu"]
+[ext_resource type="Script" uid="uid://deupyo251cvwi" path="res://Menus/Options/Options sections/General/template_label.gd" id="8_skv0c"]
+[ext_resource type="SpriteFrames" uid="uid://dh3474ik8dmde" path="res://Resources/Texture/Menus/Options/Check box/checkboxanim.res" id="11_cn651"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cn651"]
+font = ExtResource("3_hvmok")
+font_size = 50
+font_color = Color(0, 0, 0, 0.529412)
+
+[sub_resource type="LabelSettings" id="LabelSettings_us6cv"]
+font = ExtResource("4_cn651")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_qu0y8"]
+font = ExtResource("7_8houu")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="General" type="Node2D"]
+script = ExtResource("1_0wlnl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -100
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("1_ik5xy")
+
+[node name="Label" type="Label" parent="Camera2D"]
+z_index = 5
+offset_left = -575.0
+offset_top = -323.0
+offset_right = -535.0
+offset_bottom = -300.0
+text = "GENERAL"
+label_settings = SubResource("LabelSettings_cn651")
+uppercase = true
+
+[node name="Panel" type="Panel" parent="Camera2D"]
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.0
+offset_top = 204.0
+offset_right = 405.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera2D/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 4.0
+offset_right = -24.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is where the fawin description is gonna be >:)"
+label_settings = SubResource("LabelSettings_us6cv")
+autowrap_mode = 3
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8houu")
+max_polyphony = 2
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qu0y8")
+
+[node name="freakyMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_skv0c")
+bus = &"Music"
+parameters/looping = true
+
+[node name="confirmMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hvmok")
+
+[node name="Option tags" type="Node2D" parent="."]
+position = Vector2(0, -20)
+
+[node name="Node2D" type="Node2D" parent="Option tags"]
+
+[node name="TemplateLabel" type="Label" parent="Option tags/Node2D"]
+offset_left = -448.0
+offset_top = -712.0
+offset_right = -227.0
+offset_bottom = -659.0
+text = "Template"
+label_settings = SubResource("LabelSettings_qu0y8")
+script = ExtResource("8_skv0c")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Option tags/Node2D/TemplateLabel"]
+position = Vector2(-62, 19)
+scale = Vector2(0.64752, 0.64752)
+sprite_frames = ExtResource("11_cn651")
+animation = &"checkbox"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+initial_position = 1
+size = Vector2i(400, 106)
+borderless = true
+popup_window = true
+ok_button_text = "RESET"
+dialog_text = "Restore all settings to their factory defaults?"
+dialog_close_on_escape = false
+dialog_autowrap = true
+
+[connection signal="animation_finished" from="Option tags/Node2D/TemplateLabel/Sprite2D" to="Option tags/Node2D/TemplateLabel" method="_on_sprite_2d_animation_finished"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

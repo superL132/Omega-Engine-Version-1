@@ -1,0 +1,593 @@
+[gd_scene load_steps=45 format=3 uid="uid://bchi6dhigp0lc"]
+
+[ext_resource type="Script" uid="uid://c2w5cfq5yncgv" path="res://Menus/New menus/Freeplay/freeplay.gd" id="1_qxbfh"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="1_xt2db"]
+[ext_resource type="Texture2D" uid="uid://y7a6oj0bw1fd" path="res://Resources/Texture/Menus/freeplay/album covers/Koen and Aster.png" id="3_4fdjo"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="4_yd814"]
+[ext_resource type="Script" uid="uid://b1gp6n0pxtkjl" path="res://Resources/Editor-Engine/scripts/conductor.gd" id="5_l8sq4"]
+[ext_resource type="FontFile" uid="uid://2n3yaj3wiy1w" path="res://Resources/Fonts/fnf font outline.ttf" id="6_4fdjo"]
+[ext_resource type="AudioStream" uid="uid://bk08nexvs17gn" path="res://Resources/Music/Songs/blurt/Inst.ogg" id="6_gmtje"]
+[ext_resource type="Texture2D" uid="uid://dy8ggvrjomntq" path="res://Resources/Texture/icons/play state/icon-face.png" id="7_yd814"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="8_jvff4"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="9_7gwgu"]
+[ext_resource type="PackedScene" uid="uid://bgy4qrt08yaij" path="res://Resources/Scenes/Audio Visualizer/Audio Spectrum.tscn" id="11_peewg"]
+[ext_resource type="SpriteFrames" uid="uid://cdr4wo2u1n0c1" path="res://Characters/Menus/Bobcat/bobcat.res" id="12_nuih3"]
+
+[sub_resource type="Animation" id="Animation_axy06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u3h5b"]
+resource_name = "selected"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.00056, 1.00056), Vector2(1.00132, 1.00132), Vector2(1.0022, 1.0022), Vector2(1.00323, 1.00323), Vector2(1.00444, 1.00444), Vector2(1.00584, 1.00584), Vector2(1.00748, 1.00748), Vector2(1.00939, 1.00939), Vector2(1.01163, 1.01163), Vector2(1.01423, 1.01423), Vector2(1.01726, 1.01726), Vector2(1.0208, 1.0208), Vector2(1.02493, 1.02493), Vector2(1.02975, 1.02975), Vector2(1.03537, 1.03537), Vector2(1.04193, 1.04193), Vector2(1.04958, 1.04958), Vector2(1.0585, 1.0585), Vector2(1.06891, 1.06891), Vector2(1.08105, 1.08105), Vector2(1.09521, 1.09521), Vector2(1.11173, 1.11173), Vector2(1.13101, 1.13101), Vector2(1.15349, 1.15349), Vector2(1.17972, 1.17972), Vector2(1.21031, 1.21031), Vector2(1.246, 1.246), Vector2(1.28763, 1.28763), Vector2(1.3362, 1.3362), Vector2(1.39285, 1.39285), Vector2(1.45894, 1.45894), Vector2(1.53603, 1.53603), Vector2(1.62596, 1.62596), Vector2(1.73087, 1.73087), Vector2(1.85324, 1.85324), Vector2(1.996, 1.996), Vector2(2.16253, 2.16253), Vector2(2.35679, 2.35679), Vector2(2.5834, 2.5834), Vector2(2.84775, 2.84775), Vector2(3.15612, 3.15612), Vector2(3.51584, 3.51584), Vector2(3.93547, 3.93547), Vector2(4.42498, 4.42498), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tafq4"]
+_data = {
+&"RESET": SubResource("Animation_axy06"),
+&"selected": SubResource("Animation_u3h5b")
+}
+
+[sub_resource type="Animation" id="Animation_nuih3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(115, 115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_peewg"]
+resource_name = "change album"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.22, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(8, 6), Vector2(0, -2), Vector2(3, 1), Vector2(4, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.22, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(107, 107), Vector2(123, 123), Vector2(117, 117), Vector2(115, 115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm4d6"]
+_data = {
+&"RESET": SubResource("Animation_nuih3"),
+&"change album": SubResource("Animation_peewg")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fdjo"]
+font = ExtResource("4_yd814")
+font_size = 20
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_peewg"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_nuih3"]
+offsets = PackedFloat32Array(0.00757576, 1)
+colors = PackedColorArray(1, 0.26, 0.913667, 1, 1, 0.26, 0.913667, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pm4d6"]
+gradient = SubResource("Gradient_nuih3")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.482906, 0.324786)
+
+[sub_resource type="Curve" id="Curve_a2q10"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_38fe3"]
+curve = SubResource("Curve_a2q10")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ucc1k"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(648, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 41.935, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 348.07
+scale_curve = SubResource("CurveTexture_38fe3")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nuih3"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_peewg"]
+offsets = PackedFloat32Array(0, 0.996212)
+colors = PackedColorArray(1, 0.258824, 0.913725, 1, 1, 0.26, 0.913667, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nuih3"]
+gradient = SubResource("Gradient_peewg")
+width = 59
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_pm4d6"]
+offsets = PackedFloat32Array(0.00757576, 1)
+colors = PackedColorArray(0.258824, 0.839216, 1, 1, 0.26, 0.839667, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a2q10"]
+gradient = SubResource("Gradient_pm4d6")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.482906, 0.324786)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_peewg"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(648, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, -41.935, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 348.07
+scale_curve = SubResource("CurveTexture_38fe3")
+
+[sub_resource type="Gradient" id="Gradient_38fe3"]
+offsets = PackedFloat32Array(0, 0.996212)
+colors = PackedColorArray(0.258824, 0.839216, 1, 1, 0.26, 0.839667, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ucc1k"]
+gradient = SubResource("Gradient_38fe3")
+width = 59
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_ucc1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/flashy crap:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_38fe3"]
+resource_name = "flash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/flashy crap:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5uv1b"]
+_data = {
+&"RESET": SubResource("Animation_ucc1k"),
+&"flash": SubResource("Animation_38fe3")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_nuih3"]
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_a2q10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_pm4d6"]
+resource_name = "selected"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.34, 2.3313, 2.30519, 2.26169, 2.20078, 2.12246, 2.02674, 1.91362, 1.7831, 1.63517, 1.46985, 1.28711, 1.08698, 0.869439, 0.634497, 0.382153, 0.112405, 0.0970873, 0.2197, 0.32491, 0.412716, 0.483119, 0.53612, 0.571717, 0.589911, 0.590702, 0.57409, 0.540075, 0.488657, 0.419836, 0.333611, 0.229984, 0.108953, 0.0287695, 0.0865161, 0.126859, 0.1498, 0.155337, 0.143472, 0.114203, 0.0675308, 0.0131642, 0.0384778, 0.0463883, 0.0368957, 0.01]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38fe3"]
+_data = {
+&"RESET": SubResource("Animation_a2q10"),
+&"selected": SubResource("Animation_pm4d6")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8sq4"]
+font = ExtResource("6_4fdjo")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_gmtje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7gwgu"]
+resource_name = "enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.52, 2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-2000, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_peewg"]
+_data = {
+&"RESET": SubResource("Animation_gmtje"),
+&"enter": SubResource("Animation_7gwgu")
+}
+
+[node name="Freeplay" type="Node2D" groups=["Freeplay"]]
+script = ExtResource("1_qxbfh")
+
+[node name="Back ground" type="CanvasLayer" parent="."]
+layer = -5
+offset = Vector2(576, 324)
+transform = Transform2D(1, 0, 0, 1, 576, 324)
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(576, 324)
+ignore_rotation = false
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 5
+offset_right = 1300.0
+offset_bottom = 806.0
+color = Color(0, 0, 0, 0)
+
+[node name="anim" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_tafq4")
+}
+autoplay = "selected"
+
+[node name="Back Ground" type="Node2D" parent="Camera2D"]
+z_index = -5
+position = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Back Ground"]
+texture = ExtResource("1_xt2db")
+
+[node name="UI" type="Node2D" parent="Camera2D"]
+
+[node name="Control" type="Control" parent="Camera2D/UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 637.0
+offset_right = 1152.0
+offset_bottom = 119.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="Camera2D/UI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UI/Control/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 119.0
+offset_bottom = 117.0
+texture = ExtResource("3_4fdjo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/UI/Control/Panel/TextureRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_pm4d6")
+}
+speed_scale = 1.5
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/UI/Control/Panel/TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioSpectrum" parent="Camera2D/UI/Control/Panel" instance=ExtResource("11_peewg")]
+layout_mode = 1
+offset_left = 130.0
+offset_top = 114.0
+offset_right = 130.0
+offset_bottom = 114.0
+scale = Vector2(0.32, 0.32)
+intensity = 15
+
+[node name="Control" type="Control" parent="Camera2D/UI/Control"]
+clip_contents = true
+anchors_preset = 0
+offset_left = 140.0
+offset_top = 9.0
+offset_right = 484.0
+offset_bottom = 78.0
+
+[node name="Label" type="Label" parent="Camera2D/UI/Control/Control"]
+layout_mode = 0
+offset_right = 434.0
+offset_bottom = 23.0
+text = "<song name> by <artist>, <album name>"
+label_settings = SubResource("LabelSettings_4fdjo")
+
+[node name="Label2" type="Label" parent="Camera2D/UI/Control/Control"]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 434.0
+offset_bottom = 45.0
+text = "BPM : 100"
+label_settings = SubResource("LabelSettings_4fdjo")
+
+[node name="Label3" type="Label" parent="Camera2D/UI/Control/Control"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = 301.0
+offset_right = 245.0
+offset_bottom = 324.0
+text = "0.0 / 200.0"
+label_settings = SubResource("LabelSettings_4fdjo")
+
+[node name="Timer" type="Timer" parent="Camera2D/UI/Control/Control"]
+wait_time = 2.0
+
+[node name="flashy crap" type="Node2D" parent="Camera2D"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+
+[node name="top" type="Node2D" parent="Camera2D/flashy crap"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Camera2D/flashy crap/top"]
+material = SubResource("CanvasItemMaterial_peewg")
+position = Vector2(576, 0)
+amount = 80
+texture = SubResource("GradientTexture2D_pm4d6")
+lifetime = 2.1
+process_material = SubResource("ParticleProcessMaterial_ucc1k")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/flashy crap/top"]
+material = SubResource("CanvasItemMaterial_nuih3")
+offset_right = 1158.0
+offset_bottom = 215.0
+texture = SubResource("GradientTexture2D_nuih3")
+
+[node name="top2" type="Node2D" parent="Camera2D/flashy crap"]
+position = Vector2(0, 651)
+scale = Vector2(1, -1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Camera2D/flashy crap/top2"]
+material = SubResource("CanvasItemMaterial_peewg")
+position = Vector2(576, 0)
+amount = 80
+texture = SubResource("GradientTexture2D_a2q10")
+lifetime = 2.1
+process_material = SubResource("ParticleProcessMaterial_peewg")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/flashy crap/top2"]
+material = SubResource("CanvasItemMaterial_nuih3")
+offset_right = 1158.0
+offset_bottom = 215.0
+texture = SubResource("GradientTexture2D_ucc1k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/flashy crap"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_5uv1b")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+z_index = 5
+position = Vector2(1037, 554)
+sprite_frames = ExtResource("12_nuih3")
+animation = &"catbob"
+autoplay = "catbob"
+frame_progress = 0.0206327
+
+[node name="Label" type="Label" parent="Camera2D/AnimatedSprite2D"]
+offset_left = -117.0
+offset_top = -143.0
+offset_right = 121.0
+offset_bottom = -94.0
+text = "Jam to the music until I could create a better menu lol"
+label_settings = SubResource("LabelSettings_nuih3")
+autowrap_mode = 3
+
+[node name="Conductor" type="Node" parent="."]
+script = ExtResource("5_l8sq4")
+stream_player = NodePath("../AudioStreamPlayer")
+metadata/_custom_type_script = "uid://b1gp6n0pxtkjl"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gmtje")
+bus = &"Music"
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_38fe3")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 89.0
+offset_top = -158.0
+offset_right = 338.0
+offset_bottom = -100.0
+text = "Template"
+label_settings = SubResource("LabelSettings_l8sq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Label"]
+position = Vector2(-31, 32)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("7_yd814")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_peewg")
+}
+
+[node name="changeSceneTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jvff4")
+
+[node name="ScrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7gwgu")
+
+[connection signal="animation_finished" from="Camera2D/anim" to="." method="_on_anim_animation_finished"]
+[connection signal="timeout" from="Camera2D/UI/Control/Control/Timer" to="." method="_on_timer_timeout"]
+[connection signal="new_beat" from="Conductor" to="." method="_on_conductor_new_beat"]
+[connection signal="timeout" from="changeSceneTimer" to="." method="_on_change_scene_timer_timeout"]

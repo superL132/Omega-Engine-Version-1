@@ -1,0 +1,1375 @@
+[gd_scene load_steps=29 format=3 uid="uid://c38sn7gi7urhr"]
+
+[ext_resource type="Script" uid="uid://bvbfdaynj4dxo" path="res://Menus/Extras Menu/extras_menu.gd" id="1_272ri"]
+[ext_resource type="Texture2D" uid="uid://d0dovv44grwic" path="res://Resources/Texture/Menus/Bgs/menuDesat.png" id="1_j2gbh"]
+[ext_resource type="AudioStream" uid="uid://rfw7lb1kpqyq" path="res://Resources/Sounds/SFX/Menu/cancelMenu.ogg" id="3_dajmf"]
+[ext_resource type="FontFile" uid="uid://2n3yaj3wiy1w" path="res://Resources/Fonts/fnf font outline.ttf" id="4_rbnf2"]
+[ext_resource type="FontFile" uid="uid://05xqcg1wfk6y" path="res://Resources/Fonts/vcr.ttf" id="5_dvtim"]
+[ext_resource type="AudioStream" uid="uid://2un5ssqfh8x" path="res://Resources/Sounds/SFX/Menu/scrollMenu.ogg" id="5_oqxwi"]
+[ext_resource type="AudioStream" uid="uid://75o37attgbc6" path="res://Resources/Sounds/SFX/Menu/confirmMenu.ogg" id="6_hme31"]
+[ext_resource type="Shader" uid="uid://p3txw4fie8g" path="res://Unused/Removed/resources/shaders/screen_warp.gdshader" id="8_wwvbr"]
+
+[sub_resource type="Gradient" id="Gradient_oflls"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j2gbh"]
+gradient = SubResource("Gradient_oflls")
+
+[sub_resource type="Animation" id="Animation_j2gbh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oflls"]
+resource_name = "enter"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -644), Vector2(0, 687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(576, 361.62), Vector2(576, 324)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.98, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2gbh"]
+_data = {
+&"RESET": SubResource("Animation_j2gbh"),
+&"enter": SubResource("Animation_oflls")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwvbr"]
+font = ExtResource("5_dvtim")
+
+[sub_resource type="Animation" id="Animation_wwvbr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 671)]
+}
+
+[sub_resource type="Animation" id="Animation_dvtim"]
+resource_name = "scroll"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 671), Vector2(0, -16785)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_or87i"]
+_data = {
+&"RESET": SubResource("Animation_wwvbr"),
+&"scroll": SubResource("Animation_dvtim")
+}
+
+[sub_resource type="Animation" id="Animation_vt8g0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_thae6"]
+resource_name = "debug idle"
+length = 8.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 7),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.405, 1.405)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vt8g0"]
+_data = {
+&"RESET": SubResource("Animation_vt8g0"),
+&"debug idle": SubResource("Animation_thae6")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_oqxwi"]
+font = ExtResource("4_rbnf2")
+font_size = 40
+
+[sub_resource type="Animation" id="Animation_g4xhu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_or87i"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.433333, 0.666667, 0.833333, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.803922), Color(1, 1, 1, 0.490196), Color(1, 1, 1, 0.909804), Color(1, 1, 1, 0.592157), Color(1, 1, 1, 0.776471), Color(1, 1, 1, 0.580392), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8px6"]
+_data = {
+&"RESET": SubResource("Animation_g4xhu"),
+&"flash": SubResource("Animation_or87i")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_or87i"]
+shader = ExtResource("8_wwvbr")
+shader_parameter/effect_amount = 1.1875e-07
+
+[sub_resource type="Animation" id="Animation_rbleg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../ColorRect:material:shader_parameter/effect_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.1875e-07]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_f8px6"]
+resource_name = "enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../ColorRect:material:shader_parameter/effect_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [1.1875e-07, -0.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thae6"]
+_data = {
+&"RESET": SubResource("Animation_rbleg"),
+&"enter": SubResource("Animation_f8px6")
+}
+
+[node name="Extras Menu" type="Node2D"]
+script = ExtResource("1_272ri")
+
+[node name="enter gradient" type="Control" parent="."]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_top = -644.0
+offset_right = 40.0
+offset_bottom = -604.0
+
+[node name="TextureRect" type="TextureRect" parent="enter gradient"]
+layout_mode = 0
+offset_top = 647.0
+offset_right = 646.0
+offset_bottom = 1799.0
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_j2gbh")
+
+[node name="ColorRect" type="ColorRect" parent="enter gradient"]
+layout_mode = 0
+offset_top = 646.0
+offset_right = 1152.0
+offset_bottom = 1520.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enter gradient"]
+libraries = {
+&"": SubResource("AnimationLibrary_j2gbh")
+}
+autoplay = "enter"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+modulate = Color(0.152941, 0.152941, 0.152941, 1)
+z_index = -5
+texture = ExtResource("1_j2gbh")
+offset = Vector2(576, 324)
+
+[node name="DEBUGGG" type="Label" parent="Camera2D"]
+offset_top = 2.0
+offset_right = 188.0
+offset_bottom = 25.0
+text = "D-D-DEBUG MENUU!!!!!"
+label_settings = SubResource("LabelSettings_wwvbr")
+
+[node name="DEBUGGG3" type="Label" parent="Camera2D"]
+modulate = Color(0, 0.79, 0.1185, 1)
+z_index = 5
+offset_top = 671.0
+offset_right = 2204.0
+offset_bottom = 17444.0
+text = "extends Node2D
+
+#N.B:
+#I fucked something up with the code:
+#saving and loading is something else and it could corrupt your chart file...
+#Use it if you want your chart fucked up! (use it at your own risk)
+
+@onready var tabBarN = $\"Control Panel/TabBar\"
+
+##The chart that is going to be loaded on startup [u](debugging only)[/u]
+@export var preload_chart : String
+
+var file_dir
+var file_open = false
+var file_as_text
+var file_as_json
+var file_as_resource = Chart.new()
+var file
+var file_name
+
+#file info
+var file_name_special
+var file_notes
+var file_events
+var file_bpm
+var file_voices = true
+
+var file_difficulty = \"normal\"
+
+var audioInst = preload(\"res://Resources/Music/Songs/blurt/Inst.ogg\")
+var audioVoices
+var totalSongTime
+var totalSongBpm
+var currentSongBpm
+var currentSongTime = 0
+
+var chart_scroll = 0
+var totalSection = 0
+var section = 0
+var song_playing = false
+
+
+func _ready():
+	$\"Control Panel/ChartReferencer1\".hide()
+	_reset_chart_settings(\"chart\")
+	_notification_bar_setup()
+	_reload_list_items()
+	_update_tabs(0)
+	if not preload_chart == null:
+		_open_chart(preload_chart)
+
+func _open_chart(chart_name : String = \"\"):
+	
+	chart_name = chart_name.to_lower()
+	var path = str(\"res://Songs/JSON/\", chart_name, \"/\", file_difficulty, \".tres\")
+	
+	if not chart_name == \"\":
+		if ResourceLoader.exists(path):
+			_open_file(path)
+			_grab_file_info()
+		else:
+			pass
+		$\"Control Panel/Panel/sections/Song/song\".text = chart_name
+	
+
+func _calculate_stuff():
+	
+	if file:
+		totalSongBpm = round(file.bpm / 60 * totalSongTime)
+		totalSection = totalSongBpm / 4
+		print(totalSongBpm)
+
+func _reload_list_items():
+	#var events_file = load(\"res://Data/events_data.json\")
+	var events_file = JSON.parse_string(FileAccess.open(\"res://Data/events_data.json\", FileAccess.READ).get_as_text())
+	var stages_file = JSON.parse_string(FileAccess.open(\"res://Data/stages.json\", FileAccess.READ).get_as_text())
+	var charaters_file = JSON.parse_string(FileAccess.open(\"res://Data/characters.json\", FileAccess.READ).get_as_text())
+	
+	for i in events_file.size():
+		$\"Control Panel/Panel/sections/Events/event list\".add_item(events_file[i][0])
+	for i in stages_file.size():
+		$\"Control Panel/Panel/sections/Song/stage\".add_item(stages_file[i])
+	for i in charaters_file.size():
+		$\"Control Panel/Panel/sections/Song/Bf\".add_item(charaters_file[i])
+		$\"Control Panel/Panel/sections/Song/Gf\".add_item(charaters_file[i])
+		$\"Control Panel/Panel/sections/Song/Op\".add_item(charaters_file[i])
+	
+	FileAccess.open(\"res://Data/events_data.json\", FileAccess.READ).close()
+	FileAccess.open(\"res://Data/characters.json\", FileAccess.READ).close()
+
+func _notification_bar_setup():
+	$notification.offset.y = get_window().size.y
+	$notification/Node2D/notification.size = Vector2(0, 0)
+	$notification/Node2D/notification.position.y = 0 - $notification/Node2D/notification.size.y
+	
+
+func _process(delta):
+	
+	_update_chart_scroller()
+	_update_extra_stuff()
+	
+
+func _update_chart_scroller():
+	var grid = $Chart/Grid
+	
+	if Input.is_action_just_released(\"mouce wheel up\"):
+		chart_scroll += 20
+	if Input.is_action_just_released(\"mouce wheel down\"):
+		chart_scroll += -20
+	
+	if Input.is_action_just_pressed(\"space\"):
+		if song_playing:
+			song_playing = false
+			$Inst.stop()
+		else:
+			song_playing = true
+			$Inst.play(currentSongTime)
+	
+	if file:
+		if song_playing:
+			currentSongTime = $Inst.get_playback_position()
+			var scroll_play = $Inst.get_playback_position() * currentSongBpm
+			if scroll_play < (-45 * 0.75) * 16:
+				scroll_play = scroll_play - (section * (-45 * 0.75) * 16)
+			chart_scroll = scroll_play
+	
+	#if chart_scroll > 324:
+	#	chart_scroll = 324
+	
+	if file:
+		if not song_playing:
+			currentSongTime = ((-chart_scroll + section * ((45 * 0.75) * 16)) / (totalSection * ((45 * 0.75) * 16))) * totalSongTime
+	
+	#printt((-45 * 0.75) * 16)
+	
+	if section == 0:
+		if chart_scroll > 0:
+			chart_scroll = 0
+	else:
+		if chart_scroll > 0:
+			chart_scroll = (-45 * 0.75) * 16
+			section += -1
+	
+	if chart_scroll < (-45 * 0.75) * 16:
+		chart_scroll = 0
+		section += 1
+	
+	grid.position.y = chart_scroll + 324.0
+
+func _update_extra_stuff():
+	
+	
+	
+	if file:
+		#print(totalSongTime)
+		$\"other labels/Section\".text = str(\"Section: \", section)
+		$\"other labels/current time\".text = str(snappedf(currentSongTime, 0.01), \" / \", snappedf(totalSongTime, 0.01))
+		$\"other labels/Beat\".text = str(\"Beat: \", $Conductor.get_beat_at(currentSongTime))
+		$\"other labels/Step\".text = str(\"Step:\", $Conductor.get_step_at(currentSongTime))
+	else:
+		$\"other labels/Section\".text = \"Section: 0\"
+		$\"other labels/current time\".text = \"No Song Loaded\"
+		$\"other labels/Beat\".text = \"Beat: 0\"
+		$\"other labels/Step\".text = \"Step: 0\"
+
+func _open_file(path : String):
+	file_dir = path
+	#if path:
+	file_as_json = FileAccess.open(path, FileAccess.READ_WRITE)
+	file = load(\"res://Songs/JSON/blurt/normal.tres\")
+	
+	
+
+func _grab_file_info():
+	if file:
+		
+		print(\"File successfully loaded! The engine is processing the info...\")
+		file_name_special = file.name
+		file_notes = file.get_note_data()
+		file_events = file.get_event_data()
+		currentSongBpm = file.bpm
+		
+		$Conductor.tempo = file.bpm
+		
+		audioInst = load(str(\"res://Resources/Music/Songs/\", file.name.to_lower(), \"/Inst.ogg\"))
+		audioVoices = load(str(\"res://Resources/Music/Songs/\", file.name.to_lower(), \"/Voices.ogg\"))
+		print(str(\"res://Resources/Music/Songs/\", file.name.to_lower(), \"/Voices.ogg\"))
+		
+		#print(\"Name : \", file_name_special, \", BPM : \", file_bpm, \", Note Data : \", file_notes, \", Events Data : \", file_events)
+		_set_chart_settings()
+		_calculate_stuff()
+	else:
+		printerr(\"An error occured while grabbing file info, the engine is trying again... Try another path\")
+		_open_file(file_dir)
+
+func _set_chart_settings():
+	
+	var charaters_file = JSON.parse_string(FileAccess.open(\"res://Data/characters.json\", FileAccess.READ).get_as_text())
+	
+	$Inst.stream = audioInst
+	$Voices.stream = audioVoices
+	
+	
+	#print($Inst.stream.get_length())
+	totalSongTime = $Inst.stream.get_length()
+	
+	$\"Control Panel/Panel/sections/Song/song/voices\".button_pressed = file.voices
+	$\"Control Panel/Panel/sections/chart/BPM\".value = file.bpm
+	$\"Control Panel/Panel/sections/Song/BPM\".value = file.bpm
+	$\"Control Panel/Panel/sections/Song/speed\".value = file.scroll_speed
+	$\"Control Panel/Panel/sections/Song/Bf\".selected = file.bf[1]
+	$\"Control Panel/Panel/sections/Song/Gf\".selected = file.gf[1]
+	$\"Control Panel/Panel/sections/Song/Op\".selected = file.dad[1]
+	
+
+func _update_tabs(tab):
+	
+	$\"Control Panel/Panel/sections/chart\".hide()
+	$\"Control Panel/Panel/sections/Events\".hide()
+	$\"Control Panel/Panel/sections/Song\".hide()
+	if tab == 0:
+		$\"Control Panel/Panel/sections/chart\".show()
+	if tab == 1:
+		$\"Control Panel/Panel/sections/Events\".show()
+	if tab == 4:
+		$\"Control Panel/Panel/sections/Song\".show()
+
+func _reset_chart_settings(setting : String):
+	if setting == \"chart\":
+		$\"Control Panel/Panel/sections/chart/BPM\".value = 100
+		$\"Control Panel/Panel/sections/chart/vortex\".button_pressed = true
+		$\"Control Panel/Panel/sections/chart/InstVol\".value = 0.6
+		$\"Control Panel/Panel/sections/chart/VoicesVol\".value = 1.0
+		$\"Control Panel/Panel/sections/Song/BPM\".value = 100
+		$\"Control Panel/Panel/sections/Song/speed\".value = 1.0
+		
+
+
+func _on_tab_bar_tab_changed(tab):
+	_update_tabs(tab)
+
+func _on_reload_json_pressed():
+	
+	if not $\"Control Panel/Panel/sections/Song/song\".text == \"\":
+		if ResourceLoader.exists(str(\"res://Songs/JSON/\", $\"Control Panel/Panel/sections/Song/song\".text.to_lower(), \"/normal.tres\")):
+			_open_chart($\"Control Panel/Panel/sections/Song/song\".text)
+			file_name = $\"Control Panel/Panel/sections/Song/song\".text.to_lower()
+			$confirmMenu.play()
+			$\"Control Panel/Panel/sections/Song/song\".text = $\"Control Panel/Panel/sections/Song/song\".text.to_lower()
+		else:
+				push_notification(\"res://Resources/Texture/Menus/Charter/Ui/Notifications/error.svg\", \"No Exist\")
+				$cancelMenu.play()
+		if not file == null:
+			if ResourceLoader.exists(str(\"res://Songs/JSON/\", $\"Control Panel/Panel/sections/Song/song\".text, \"/normal.tres\")):
+				push_notification(\"res://Resources/Texture/Menus/Charter/Ui/Notifications/confimed.svg\", \"LOADED!\")
+			else:
+				push_notification(\"res://Resources/Texture/Menus/Charter/Ui/Notifications/error.svg\", \"No Exist\")
+				$cancelMenu.play()
+		else:
+			push_notification(\"res://Resources/Texture/Menus/Charter/Ui/Notifications/error.svg\", \"ERROR...\")
+			$cancelMenu.play()
+	else:
+		push_notification(\"res://Resources/Texture/Menus/Charter/Ui/Notifications/error.svg\", \"NO WORDS\")
+		$cancelMenu.play()
+	
+
+func push_notification(image : String, message : String):
+	var notifTexture = $notification/Node2D/notification
+	var label = $notification/Node2D/notification/Label
+	
+	$notification/Node2D/AnimationPlayer.play(\"RESET\")
+	$notification/Node2D/AnimationPlayer.play(\"notif\")
+	notifTexture.texture = load(image)
+	label.text = message
+	
+	_notification_bar_setup()
+
+
+func _on_voices_toggled(toggled_on):
+	if file:
+		file.voices = toggled_on
+		
+		#im so darned stupid bruh... *face palm*
+		
+	
+
+func _on_bpm_value_changed(value):
+	if file:
+		file.bpm = value
+
+func _save_data():
+	
+	ResourceSaver.save(file, file_dir)
+	print(\"settings saved\")
+	$scrollMenu.play()
+	push_notification(\"res://Resources/Texture/Menus/Charter/Ui/Notifications/saving.svg\", \"SAVED!\")
+
+
+func _on_save_pressed():
+	_save_data()
+
+
+func _on_speed_value_changed(value):
+	if file:
+		file.scroll_speed = value
+
+
+func _on_bf_item_selected(index):
+	print(index)
+	var charaters_file = JSON.parse_string(FileAccess.open(\"res://Data/characters.json\", FileAccess.READ).get_as_text())
+	
+	if file:
+		file.bf = [charaters_file[index - 1], index]
+
+
+func _on_gf_item_selected(index):
+	print(index)
+	var charaters_file = JSON.parse_string(FileAccess.open(\"res://Data/characters.json\", FileAccess.READ).get_as_text())
+	
+	if file:
+		file.gf = [charaters_file[index - 1], index]
+
+
+func _on_op_item_selected(index):
+	print(index)
+	var charaters_file = JSON.parse_string(FileAccess.open(\"res://Data/characters.json\", FileAccess.READ).get_as_text())
+	
+	if file:
+		file.dad = [charaters_file[index - 1], index]
+
+
+func _on_conductor_new_beat(current_beat, measure_relative):
+	#$MetronomeTick.play()
+	pass
+
+extends Node2D
+
+
+var menu_option = 0
+var total_options = 1
+var can_control = true
+var action = \"idle\"
+
+@onready var camera = $Camera2D
+
+func _ready():
+	
+	$\"enter gradient/AnimationPlayer\".play(\"enter\")
+	MenuMannager.coming_from_extra_menu = true
+
+
+func _process(delta):
+	
+	if can_control:
+		_options()
+	_camera(delta)
+
+func _camera(delta):
+	
+	camera.position.y = lerpf(camera.position.y, menu_option * 150, delta * 3)
+
+func _options():
+	
+	if Input.is_action_just_pressed(\"uiUp\") or Input.is_action_just_pressed(\"uiDown\"):
+		menu_option += Input.get_axis(\"uiUp\", \"uiDown\")
+		$scrollMenu.play()
+	if menu_option == 1:
+		$Camera2D/DEBUGGG3/AnimationPlayer.play(\"scroll\")
+	else:
+		$Camera2D/DEBUGGG3/AnimationPlayer.play(\"RESET\")
+	
+	if Input.is_action_just_pressed(\"uiBack\"):
+		can_control = false
+		action = \"back\"
+		$\"enter gradient/AnimationPlayer\".play_backwards(\"enter\")
+		$cancelMenu.play()
+		$changeSceneTimer.start()
+	
+	if Input.is_action_just_pressed(\"uiConfirm\"):
+		can_control = false
+		$confirmMenu.play()
+		action = \"select\"
+		MenuMannager.menu_music_player.stop()
+		$changeSceneTimer.start()
+	
+	if menu_option > 0:
+		menu_option = total_options
+	if menu_option < total_options:
+		menu_option = 0
+	
+	if menu_option == 1:
+		if OS.has_feature(\"debug\"):
+			$Text/Label2.modulate = Color.GREEN
+		else:
+			$Text/Label2.modulate = Color.RED
+	else:
+		$Text/Label2.modulate = Color.WHITE
+
+
+func _on_change_scene_timer_timeout():
+	if action == \"back\":
+		get_tree().change_scene_to_file(\"res://Menus/New menus/Main Menu/new_main_menu.tscn\")
+	
+	if action == \"select\":
+		
+		if menu_option == 0:
+			get_tree().change_scene_to_file(\"res://Menus/Editors/Charter(new)/chart.tscn\")
+
+extends Node2D
+
+@onready var camera = $Camera2D
+@onready var camera3d = $\"SubViewport/3d words/camera base\"
+@onready var visual = $Camera2D/Visual #visual is the graphic in front the bg
+
+var visualTexture_storymode = preload(\"res://Resources/Texture/Menus/Main Menu/Images/storymode.png\")
+var visualTexture_freeplay = preload(\"res://Resources/Texture/Menus/Main Menu/Images/freeplay.png\")
+var visualTexture_options = preload(\"res://Resources/Texture/Menus/Main Menu/Images/options.png\")
+var visualTexture_credits = preload(\"res://Resources/Texture/Menus/Main Menu/Images/credits.png\")
+var visualTexture_missing = preload(\"res://icon.svg\")
+
+@export var section_descriptions : Array = [\"Quit waiting and get funkey!!!\", \"Pick a song, any song!\", \"Check your options, dont be frightened!\", \"Check out the lovely people that contributed to this mod :>\", \"Your acomplishments!!!\"]
+
+var menu_option = 1
+var total_options = 5
+var can_control = true
+var current_action = \"startup\"
+
+var visualFlashStat = 1
+
+var menuMusic_pitch = 1
+func _ready():
+	
+	
+	if !MenuMannager.startup:
+		pass
+	
+	if not MenuMannager.menu_music_player.playing:
+		MenuMannager._freeplay_request(false)
+	
+	if MenuMannager.coming_from_extra_menu:
+		$Camera2D/Anim.play_backwards(\"extras menu\")
+		MenuMannager.coming_from_extra_menu = false
+	else:
+		$Camera2D/Anim.play_backwards(\"selected\")
+	$\"SubViewport/3d words/AnimationPlayer\".play_backwards(\"selelcted\")
+	
+	MenuMannager.startup = false
+	menu_option = MenuMannager.last_main_option
+	camera.position.x = MenuMannager.last_main_option * 200
+	
+	camera3d.position.y = MenuMannager.last_main_option - 0 * -2
+	
+	
+	
+	#$freakyMenu.play(MenuMannager.menu_music_time)
+	
+	var version_data = FileAccess.open(\"res://Data/version info.json\", FileAccess.READ)
+	var json_versionData = JSON.new()
+	json_versionData = json_versionData.parse_string(FileAccess.get_file_as_string(\"res://Data/version info.json\"))
+	
+	$Camera2D/version.text = str(json_versionData.get(\"versionType\"), \" \", (ProjectSettings.get_setting(\"application/config/version\")))
+
+func _process(delta):
+	
+	
+	
+	camera.position.y = lerp(camera.position.y, float(menu_option - 1) * 200, delta * 3)
+	camera.position.x = lerp(camera.position.x, float(menu_option - 1) * 75, delta * 3)
+	
+	camera3d.position.y = lerpf(camera3d.position.y, 0 - (menu_option - 1) * 2, delta * 3)
+	camera3d.position.x = lerpf(camera3d.position.x, (menu_option - 1) * 2, delta * 3)
+	
+	visual.position.y = lerpf(visual.position.y, 0, delta * 10)
+	
+	if can_control:
+		_update_option()
+	_update_words(delta)
+	#_update_words_old()
+	_update_visual_image()
+	_update_other()
+	
+	
+
+func _update_other():
+	
+	$Camera2D/Desc.text = section_descriptions[menu_option - 1]
+
+func _update_visual_image():
+	if menu_option == 1:
+		visual.texture = visualTexture_storymode
+	elif menu_option == 2:
+		visual.texture = visualTexture_freeplay
+	elif menu_option == 3:
+		visual.texture = visualTexture_options
+	elif menu_option == 4:
+		visual.texture = visualTexture_credits
+	else:
+		visual.texture = visualTexture_missing
+
+func _update_option():
+	if Input.is_action_just_pressed(\"uiUp\") or Input.is_action_just_pressed(\"uiDown\"):
+		menu_option += Input.get_axis(\"uiUp\", \"uiDown\")
+		$scrollMenu.play()
+		visual.position.y = 50
+		print(menu_option)
+		$Camera2D/Desc/AnimationPlayer.play(\"RESET\")
+		$Camera2D/Desc/AnimationPlayer.play(\"update\")
+		
+		if menu_option < 1:
+			menu_option = total_options
+	
+		if menu_option > total_options:
+			menu_option = 1
+	
+	if Input.is_action_just_pressed(\"uiBack\"):
+		
+		
+		$\"change scene\".start()
+		can_control = false
+		$cancelMenu.play()
+		$Camera2D/Anim.play(\"selected\")
+		$\"SubViewport/3d words/AnimationPlayer\".play(\"selelcted\")
+		current_action = \"back\"
+	
+	if Input.is_action_just_pressed(\"uiConfirm\"):
+		$\"change scene\".start()
+		can_control = false
+		$confirmMenu.play()
+		$Camera2D/Anim.play(\"selected\")
+		$\"SubViewport/3d words/AnimationPlayer\".play(\"selelcted\")
+		$Camera2D/Visual/AnimationPlayer.play(\"flash\")
+		current_action = \"selecting\"
+		if menu_option == 2:
+			MenuMannager._freeplay_request(true)
+			$freakyMenu/AnimationPlayer.play(\"freeplay fade\")
+	
+	if Input.is_action_just_pressed(\"debug1\"):
+		$\"change scene\".start()
+		can_control = false
+		$confirmMenu.play()
+		$Camera2D/Anim.play(\"extras menu\")
+		$\"SubViewport/3d words/AnimationPlayer\".play(\"selelcted\")
+		$Camera2D/Visual/AnimationPlayer.play(\"flash\")
+		current_action = \"go to extra menu\"
+
+func _update_words(delta):
+	
+	var story = $\"SubViewport/3d words/story\"
+	var freeplay = $\"SubViewport/3d words/freeplay\"
+	var options = $\"SubViewport/3d words/options\"
+	var credits = $\"SubViewport/3d words/credits\"
+	var awards = $\"SubViewport/3d words/awards\"
+	
+	if menu_option == 1:
+		story.play(\"selected\")
+	else:
+		story.play(\"basic\")
+	
+	if menu_option == 2:
+		freeplay.play(\"selected\")
+	else:
+		freeplay.play(\"basic\")
+	
+	if menu_option == 3:
+		options.play(\"selected\")
+	else:
+		options.play(\"basic\")
+	
+	if menu_option == 4:
+		credits.play(\"selected\")
+	else:
+		credits.play(\"basic\")
+	
+	if menu_option == 5:
+		awards.play(\"selected\")
+	else:
+		awards.play(\"basic\")
+	
+
+func _update_words_old():
+	if menu_option == 1:
+		$\"words/Story Mode\".play(\"selected\")
+	else:
+		$\"words/Story Mode\".play(\"basic\")
+	
+	if menu_option == 2:
+		$\"words/Free Play\".play(\"selected\")
+	else:
+		$\"words/Free Play\".play(\"basic\")
+	
+	if menu_option == 3:
+		$\"words/Options\".play(\"selected\")
+	else:
+		$\"words/Options\".play(\"basic\")
+	
+	if menu_option == 4:
+		$\"words/Credits\".play(\"selected\")
+	else:
+		$\"words/Credits\".play(\"basic\")
+
+
+
+
+
+func _on_anim_animation_finished(anim_name):
+	
+	if current_action == \"selecting\":
+		MenuMannager.menu_music_time = $freakyMenu.get_playback_position()
+		MenuMannager.last_main_option = menu_option
+		
+		
+		if menu_option == 1:
+			
+			
+			get_tree().change_scene_to_file(\"res://Menus/New menus/Story/story_mode.tscn\")
+			
+		if menu_option == 2:
+			
+			
+			get_tree().change_scene_to_file(\"res://Menus/New menus/Freeplay/freeplay.tscn\")
+			
+		
+		if menu_option == 3:
+			
+			get_tree().change_scene_to_file(\"res://Menus/Options/options.tscn\")
+		
+		if menu_option == 4:
+			
+			get_tree().change_scene_to_file(\"res://Menus/New menus/Credits(new)/credits.tscn\")
+	elif current_action == \"back\":
+		MenuMannager.menu_music_time = $freakyMenu.get_playback_position()
+		MenuMannager.last_main_option = 1
+		
+		get_tree().change_scene_to_file(\"res://Menus/New menus/Press Start/press_start.tscn\")
+	
+	elif current_action == \"go to extra menu\":
+		MenuMannager.menu_music_time = $freakyMenu.get_playback_position()
+		MenuMannager.last_main_option = 1
+		
+		get_tree().change_scene_to_file(\"res://Menus/Extras Menu/extras_menu.tscn\")
+
+
+func _on_timer_timeout():
+	if visualFlashStat == 1:
+		visualFlashStat = 2
+	
+	if visualFlashStat == 2:
+		visualFlashStat = 1
+	
+extends Node2D
+
+##Determines who appears on the credit menu and their order. This includes the description icon, color, etc. The entire credits menu relys on this varible
+@export var credits = [
+	\"Main Team\",
+	[\"superL132\", \"res://Resources/Texture/icons/credits/superL132.png\", \"The director\", \"DBBE00\", \"https://linktr.ee/superl132\"],
+	[\"mastertrapmon\", \"res://Resources/Texture/icons/credits/mastertrapmon.png\", \"The creator of Koen and Aster\", \"4888C5\", null],
+	[\"Mega Mango\", \"res://Resources/Texture/icons/credits/missing_icon.png\", \"Creator of the songs : Boggle and Blurt\", \"B8900D\", null],
+	[\"Star Verse\", \"res://Resources/Texture/icons/credits/missing_icon.png\", \"The creator of the Koen Aster song\", \"17003D\", null],
+	\"More People\",
+	[\"Chocok\", \"res://Resources/Texture/icons/credits/missing_icon.png\", \"Assistant artist\", \"23FF86\", null],
+	\"Play Testers\",
+	[\"kitsune\", \"res://Resources/Texture/icons/credits/missing_icon.png\", \"desc\", \"FFFFFF\", null],
+	[\"Rosa\", \"res://Resources/Texture/icons/credits/missing_icon.png\", \"desc\", \"FFFFFF\", null]
+]
+@export var titleSettings = {
+	\"Main Team\" : [Color.TEAL, \"The stars of the show!\"],
+	\"More People\" : [\"555555\", \"People that help out (give them just as much love as you would give us)\"],
+	\"Play Testers\" : [\"555555\", \"The play tester crew!!\"]
+}
+
+#template templates!
+#[\"name\", \"res://Resources/Texture/icons/credits/missing_icon.png\", \"desc\", \"FFFFFF\", null]
+#\"Name (important)\" : [\"FFFFFF\", \"desc\"]
+
+#template stuff
+@onready var templateLabel = $\"Credit Labels/Control/Template\"
+#@onready var templateIcon = $\"Credit Labels/Control/Template/TextureRect\"
+@onready var templateHeader = $\"Credit Labels/Control/Title\"
+
+@onready var camera = $Camera2D
+@onready var bg = $Camera2D/Sprite2D
+@onready var descPanel = $Camera2D/Panel
+@onready var descLabel = $Camera2D/Panel/Label
+
+var menu_option = 0
+var scroll_multiplier = 150
+var can_control = true
+
+func _ready():
+	
+	#$freakyMenu.play(MenuMannager.menu_music_time)
+	$Camera2D/Anim.play_backwards(\"selected\")
+	_credits_names()
+
+func _credits_names():
+	
+	for i in credits.size():
+		print(typeof(credits[i]))
+		if typeof(credits[i]) == 28:
+			var templateLabelDup = templateLabel.duplicate()
+			#var templateIconDup = templateIcon.duplicate()
+			templateLabelDup.position.y = i * scroll_multiplier
+			templateLabelDup.text = credits[i][0]
+			templateLabelDup.id = i
+			$\"Credit Labels/Control\".add_child(templateLabelDup)
+			templateLabelDup.icon.texture = load(credits[i][1])
+	
+		elif typeof(credits[i]) == 4:
+			var templateHeaderDup = templateHeader.duplicate()
+			templateHeaderDup.position.y = i * scroll_multiplier
+			templateHeaderDup.text = credits[i]
+			$\"Credit Labels/Control\".add_child(templateHeaderDup)
+
+func _process(delta):
+	
+	_camera_stuff(delta)
+	_update_other()
+
+func _update_other():
+	pass
+	#if typeof(credits[menu_option]) == 28:
+		#descLabel.text = credits[menu_option][2]
+		#print(\"name\")
+	#elif typeof(credits[menu_option]) == 4:
+		#titleSettings.get(credits[menu_option])[1]
+		#print(\"title\")
+	#print(typeof(credits[menu_option]))
+
+func _camera_stuff(delta):
+	
+	camera.position.y = lerpf(camera.position.y, menu_option * scroll_multiplier, delta * 3)
+	
+	if can_control:
+		if Input.is_action_just_pressed(\"uiUp\") or Input.is_action_just_pressed(\"uiDown\"):
+			menu_option += Input.get_axis(\"uiUp\",\"uiDown\")
+			$scrollMenu.play()
+	
+	if can_control:
+		if Input.is_action_just_pressed(\"uiBack\"):
+			can_control = false
+			$Camera2D/Anim.play(\"selected\")
+			$BackSceneTimer.start()
+			$cancelMenu.play()
+	
+	if can_control:
+		if Input.is_action_just_pressed(\"uiConfirm\"):
+			if typeof(credits[menu_option]) == 28:
+				if not credits[menu_option][4] == null:
+					OS.shell_open(credits[menu_option][4])
+					$confirmMenu.play()
+				else:
+					$cancelMenu.play()
+	
+	if menu_option < 0:
+		menu_option = credits.size() - 1
+	if menu_option > credits.size() - 1:
+		menu_option = 0
+	
+	if typeof(credits[menu_option]) == 28:
+		descLabel.text = credits[menu_option][2]
+		bg.modulate = lerp(bg.modulate, Color(credits[menu_option][3]), delta)
+	elif typeof(credits[menu_option]) == 4:
+		descLabel.text = titleSettings.get(credits[menu_option])[1]
+		bg.modulate = lerp(bg.modulate, Color(titleSettings.get(credits[menu_option])[0]), delta)
+	
+
+func _on_back_scene_timer_timeout():
+	MenuMannager.menu_music_time = $freakyMenu.get_playback_position()
+	get_tree().change_scene_to_file(\"res://Menus/New menus/Main Menu/new_main_menu.tscn\")
+
+extends Control
+
+var newFeatures : Array = []
+
+
+func _ready():
+	
+	_reload()
+
+func _reload():
+	
+	_fix_arrays()
+	_make_list()
+
+func _fix_arrays():
+	
+	pass
+
+func _make_list():
+	
+	var listTemplate = $Template
+	
+	for i in newFeatures.size():
+		
+		listTemplate.position.y = i * 20
+		listTemplate.text = str(\"• \", newFeatures[i])
+		
+		add_child(listTemplate.duplicate())
+		
+		
+extends Control
+
+#the link
+#https://gist.githubusercontent.com/superL132/f96d54a10ae3b944b65d378344c32acc/raw/version_control.json
+
+#formula
+#https://gist.github.com/<USER_NAME>/<GIST_ID>/raw/<GIST_FILE_NAME>
+
+#and finally, don't forget the cat in the bathroom, lol
+
+@onready var newFeaturesListNode = $\"Panel/New Features List\"
+@onready var warningLabel = $\"Panel/Warning label\"
+@onready var yourVersionLabel = $\"Panel/Your version\"
+@onready var newVersionLabel = $\"Panel/new version\"
+
+
+func _toggle(toggle : bool):
+	if toggle:
+		$AnimationPlayer.play(\"open\")
+	else:
+		$AnimationPlayer.play_backwards(\"open\")
+	
+extends Node2D
+
+@onready var camera = $Camera2D
+
+var options_general = [[\"Full Screen\", \"fullscreen\"], [\"Shaders\", \"shaders\"], [\"3D Engine\", \"3d\"], [\"Check for Updates\", \"updates\"]]
+var options_other = [[\"test\", \"test\"]]
+
+var options_info = {\"test\" : [\"Test1, idk why I put this here\"],
+	\"test2\" : [\"Test2 i here too >:D\"],
+	\"fullscreen\" : [\"Switches your screen to fullscreen mode (no effect)\"],
+	\"shaders\" : [\"If checked : Enables shaders. Shaders could possably decrease performance\"],
+	\"3d\" : [\"If unchecked, disables Godot's 3D engine (no effect)\"],
+	\"updates\" : [\"If unchecked, stops prompting you to update the engine\"]
+}
+
+var options = []
+
+var preloadScene_mainOptions = preload(\"res://Menus/Options/options.tscn\")
+
+var menu_option = 0
+var can_control = true
+func _ready():
+	
+	preloadScene_mainOptions = load(\"res://Menus/Options/options.tscn\")
+	
+	_set_options()
+	
+	_make_option_labels()
+	
+	#$freakyMenu.play(MenuMannager.menu_music_time)
+	$scrollMenu.play()
+	
+
+func _set_options():
+	var section = Settings.option_section
+	
+	if section == \"General\":
+		options = options_general
+	if section == \"Other\":
+		options = options_other
+	
+	$Camera2D/Label.text = Settings.option_section
+
+func _process(delta):
+	
+	if can_control:
+		_camera(delta)
+	_update_other()
+
+func _camera(delta):
+	
+	camera.position.y = lerpf(camera.position.y, menu_option * 150, delta * 3)
+	
+	
+	if camera.position.y < 225:
+		camera.position.y = 225
+	
+	if Input.is_action_just_pressed(\"uiUp\") or Input.is_action_just_pressed(\"uiDown\"):
+		menu_option += Input.get_axis(\"uiUp\", \"uiDown\")
+		$scrollMenu.play()
+	
+	if menu_option < 0:
+		menu_option = options.size() - 1
+	if menu_option > options.size() - 1:
+		menu_option = 0
+	
+	if Input.is_action_just_pressed(\"uiConfirm\"):
+		$scrollMenu.play()
+		if Settings.preferences.get(options[menu_option][1]):
+			Settings.preferences.set(options[menu_option][1], false)
+			Settings._save_preferences()
+		else:
+			Settings.preferences.set(options[menu_option][1], true)
+			Settings._save_preferences()
+	
+	if Input.is_action_just_pressed(\"uiBack\"):
+		MenuMannager.menu_music_time = $freakyMenu.get_playback_position()
+		get_tree().change_scene_to_file(\"res://Menus/Options/options.tscn\")
+	
+	if Input.is_key_pressed(KEY_R):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		can_control = false
+		$ConfirmationDialog.show()
+
+func _update_other():
+	
+	$Camera2D/Panel/Label.text = options_info.get(options[menu_option][1])[0]
+
+func _make_option_labels():
+	
+	for i in options.size():
+		var labelTemplate = $\"Option tags/Node2D/TemplateLabel\".duplicate()
+		labelTemplate.position.y = i * 150
+		labelTemplate.id = i
+		labelTemplate.text = options[i][0]
+		labelTemplate.optionFile_name = options[i][1]
+		
+		$\"Option tags/Node2D\".add_child(labelTemplate)
+
+
+func _on_confirmation_dialog_canceled():
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	can_control = true
+
+
+func _on_confirmation_dialog_confirmed():
+	Settings._reset()
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	can_control = true
+"
+label_settings = SubResource("LabelSettings_wwvbr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/DEBUGGG3"]
+libraries = {
+&"": SubResource("AnimationLibrary_or87i")
+}
+
+[node name="DEBUGGG2" type="Label" parent="Camera2D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1151.0
+offset_top = 625.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Debug Detected!"
+label_settings = SubResource("LabelSettings_wwvbr")
+vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_vt8g0")
+}
+
+[node name="changeSceneTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="cancelMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dajmf")
+
+[node name="Text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 324.0
+offset_right = 1154.0
+offset_bottom = 364.0
+
+[node name="Label" type="Label" parent="Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499133
+anchor_top = -0.075
+anchor_right = 0.5
+anchor_bottom = 1.1
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chart"
+label_settings = SubResource("LabelSettings_oqxwi")
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499133
+anchor_top = 1.45
+anchor_right = 0.5
+anchor_bottom = 2.625
+offset_left = -134.0
+offset_top = 92.0
+offset_right = 134.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Debug Stuff"
+label_settings = SubResource("LabelSettings_oqxwi")
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text/Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_f8px6")
+}
+
+[node name="scrollMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_oqxwi")
+max_polyphony = 2
+
+[node name="confirmMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hme31")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_or87i")
+offset_left = -885.0
+offset_top = -383.0
+offset_right = 2344.0
+offset_bottom = 1333.0
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="ColorRect"]
+root_node = NodePath("../../Camera2D/DEBUGGG3")
+libraries = {
+&"": SubResource("AnimationLibrary_thae6")
+}
+
+[connection signal="timeout" from="changeSceneTimer" to="." method="_on_change_scene_timer_timeout"]

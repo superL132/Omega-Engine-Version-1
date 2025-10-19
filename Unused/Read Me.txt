@@ -1,0 +1,6 @@
+this is a folder full of unused assets like:
+	testing
+	removed assets
+	not yet added to the game
+
+there should be folders marking the assets inside. Please don't remove them from the unused folder. Although they aren't used in-game, they could still break it, (note that this is not likely, just possible).

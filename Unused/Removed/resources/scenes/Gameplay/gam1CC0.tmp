@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bovlnbdtxe0bc"]
+
+[ext_resource type="Script" path="res://Resources/Scenes/Gameplay/gameplay_ui.gd" id="1_0jk16"]
+[ext_resource type="Texture2D" uid="uid://4mlroql4rpc5" path="res://Resources/Texture/Ui/Arrows/down-blank.png" id="1_umwf0"]
+[ext_resource type="Texture2D" uid="uid://bw2fivv3sjtqb" path="res://Resources/Texture/Ui/Arrows/left-blank.png" id="2_uakj0"]
+[ext_resource type="Texture2D" uid="uid://sox7272xnmos" path="res://Resources/Texture/Ui/Arrows/right-blank.png" id="3_xfw4k"]
+[ext_resource type="Texture2D" uid="uid://dm8qbrx5ky0w8" path="res://Resources/Texture/Ui/Arrows/up-blank.png" id="4_qx1fu"]
+
+[node name="Gameplay Ui" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_0jk16")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="player_arrows" type="Node2D" parent="."]
+position = Vector2(828, 72)
+
+[node name="down" type="Sprite2D" parent="player_arrows"]
+position = Vector2(80, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_umwf0")
+
+[node name="left" type="Sprite2D" parent="player_arrows"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uakj0")
+
+[node name="right" type="Sprite2D" parent="player_arrows"]
+position = Vector2(240, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_xfw4k")
+
+[node name="up" type="Sprite2D" parent="player_arrows"]
+position = Vector2(160, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_qx1fu")

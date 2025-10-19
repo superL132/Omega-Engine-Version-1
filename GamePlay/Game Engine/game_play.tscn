@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxp6j8vosu1ft"]
+
+[ext_resource type="Script" uid="uid://gciyaa2t850r" path="res://GamePlay/Game Engine/game_play.gd" id="1_te0ag"]
+
+[node name="GamePlay" type="Node2D"]
+script = ExtResource("1_te0ag")
+chart_dir = "uid://qaed5hvymk"
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Inst" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="Voices" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="Stage" type="Node" parent="."]

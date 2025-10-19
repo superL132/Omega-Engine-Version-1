@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://box0gqxicb3ec"]
+
+[ext_resource type="Texture2D" uid="uid://u7kse4qebnot" path="res://Resources/Texture/Stages/Stage/stageback.png" id="1_lfi0j"]
+[ext_resource type="Script" path="res://Stages/Stage/stage.gd" id="1_wbap4"]
+[ext_resource type="Texture2D" uid="uid://8m52ydggb8si" path="res://Resources/Texture/Stages/Stage/stagefront.png" id="2_2kjft"]
+[ext_resource type="Texture2D" uid="uid://8ywk20qow423" path="res://Resources/Texture/Stages/Stage/stagecurtains.png" id="3_0t78k"]
+[ext_resource type="Texture2D" uid="uid://d3hocvqd1d7e1" path="res://Resources/Texture/Stages/Stage/stage_light.png" id="4_sjtqu"]
+[ext_resource type="PackedScene" uid="uid://dmj3vkawqh8gf" path="res://Characters/Bf/bf.tscn" id="6_vmao8"]
+[ext_resource type="PackedScene" uid="uid://b0a6ynml47cb" path="res://Characters/Dad/dad.tscn" id="7_8arf3"]
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_wbap4")
+
+[node name="Stagefront" type="Sprite2D" parent="."]
+position = Vector2(0, 431.205)
+texture = ExtResource("2_2kjft")
+
+[node name="front" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.5, 1.5)
+scroll_offset = Vector2(-290, -290)
+
+[node name="Stagecurtains" type="Sprite2D" parent="front"]
+z_index = 3
+texture = ExtResource("3_0t78k")
+
+[node name="StageLight" type="Sprite2D" parent="front"]
+z_index = 2
+position = Vector2(-705, -371)
+texture = ExtResource("4_sjtqu")
+
+[node name="StageLight2" type="Sprite2D" parent="front"]
+z_index = 2
+position = Vector2(705, -371)
+texture = ExtResource("4_sjtqu")
+flip_h = true
+
+[node name="back" type="Parallax2D" parent="."]
+z_index = -3
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(172, 110)
+
+[node name="Stageback" type="Sprite2D" parent="back"]
+texture = ExtResource("1_lfi0j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+
+[node name="BF" parent="." instance=ExtResource("6_vmao8")]
+position = Vector2(393, 127)
+
+[node name="Dad" parent="." instance=ExtResource("7_8arf3")]
+position = Vector2(-358, -54)

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Chart" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Resources/Editor-Engine/scripts/charts.gd" id="1_k55yh"]
+
+[resource]
+script = ExtResource("1_k55yh")
+name = "Harvey"
+bpm = 142
+voices = true
+scroll_speed = 1.3
+artist = "Her's"
+album = "Neko and Edel"
+bf = ["bf", 1]
+dad = ["", 0]
+gf = ["", 0]
+stage = [""]
+chart_data = {
+"events": {},
+"notes": {}
+}
+metadata/_custom_type_script = "uid://b7jcuetc7n05c"

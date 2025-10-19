@@ -1,0 +1,8 @@
+{
+    "option": {
+        "name": "Option Name",
+        "default": true,
+        "desc": "Option Description",
+        "section": "General"
+    }
+}

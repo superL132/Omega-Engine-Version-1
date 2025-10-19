@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://cr61uxochrpoj"]
+
+[ext_resource type="Script" uid="uid://cvph35a2rs1xs" path="res://Resources/Editor-Engine/scripts/character_data.gd" id="1_0ysdg"]
+
+[resource]
+script = ExtResource("1_0ysdg")
+name = "Girlfriend"
+default_type = "Gf"
+twoIdle = true
+idle = "idleR"
+idle2 = "idleL"
+left = "GF left note"
+right = "GF Right Note"
+up = "GF Up Note"
+down = "GF Down Note"
+metadata/_custom_type_script = "uid://cvph35a2rs1xs"

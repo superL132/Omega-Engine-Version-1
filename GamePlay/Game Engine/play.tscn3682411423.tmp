@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://3qarvgdepmjm"]
+
+[ext_resource type="Script" uid="uid://bqirh164e8sbf" path="res://GamePlay/Game Engine/play.gd" id="1_548fn"]
+
+[node name="Play" type="Node2D"]
+script = ExtResource("1_548fn")
+chart = "res://Songs/JSON/blurt/normal.tres"
+
+[node name="Camera2D" type="Camera2D" parent="."]

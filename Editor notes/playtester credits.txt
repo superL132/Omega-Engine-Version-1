@@ -1,0 +1,4 @@
+Color dark cyan, name Rosa and icon a rose
+Color: black(obvi) icon: dahlia name, kitsune
+
+//note to self, this is from the people that requested

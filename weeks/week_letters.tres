@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="weekData" load_steps=2 format=3 uid="uid://n1eono3q813l"]
+
+[ext_resource type="Script" uid="uid://drlb7gm6dyqmo" path="res://Resources/Editor-Engine/scripts/week_data.gd" id="1_k0kou"]
+
+[resource]
+script = ExtResource("1_k0kou")
+week_desc = "Week_Desc"
+tracks = Array[String](["Harvey"])
+dificulties = Array[String](["easy"])
+song_colors = Array[Color]([Color(0.3, 0.3, 0.3, 1)])
+metadata/_custom_type_script = "uid://drlb7gm6dyqmo"

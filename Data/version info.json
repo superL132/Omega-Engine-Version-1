@@ -1,0 +1,13 @@
+{
+    "currentVersion": "0.9.2",
+    "new": [
+        "Modified the Extras Menu",
+        "Awards menu in development",
+        "Creating an automatic README file updater",
+        "Update API broken, repairs in progress",
+        "Creating an automatic UPDATE LOG"
+    ],
+    "versionType": "debug",
+    "ID": 1,
+    "noteForSnoops" : "This is private information, please do not be a little fucking shit and modify it. Hacker, lol"
+}
